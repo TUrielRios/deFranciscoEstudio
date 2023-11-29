@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Asegúrate de tener un módulo de estilos para el encabezado
-import logo from '../../imagenes/logo.png'
+//import logo from '../../imagenes/logo.png'
 
 const Header = () => {
   return (

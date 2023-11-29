@@ -2,7 +2,7 @@
 import React from 'react';
 import { FaArrowDown } from 'react-icons/fa';
 import styles from './Inicio.module.css';
-import { FaFacebook, FaTwitter, FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 import fondo from '../../imagenes/fondoOriginal.png'
 import Nosotros from '../Nosotros/Nosotros';
 import Carrusel from '../Carrusel/Carrusel';
