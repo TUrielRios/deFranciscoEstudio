@@ -1,0 +1,82 @@
+/* Nosotros.module.css */
+.nosotrosSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Cambiado a columna para apilar el contenido */
+    padding: 20px;
+    margin-top: 15%;
+    padding-top: 5%;
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+  }
+  
+  .content {
+    text-align: center;
+    z-index: 1;
+  }
+
+  .content h1 {
+    color: black;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+    position: relative;
+  }
+  
+  .content h1::after {
+    content: '';
+    display: block;
+    width: 20%;
+    height: 2px;
+    background-color: black;
+    margin: 10px auto; /* Ajusta la distancia entre la palabra y el subrayado */
+  }
+  
+  .scrollDown {
+    margin-top: 20px;
+  }
+  
+  .scrollDown a {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .empleadoContainer {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .empleadoItem {
+    width: 250px; /* Ancho de cada tarjeta de empleado */
+    margin: 3%; /* Espaciado entre las tarjetas */
+    text-align: center;
+  }
+  
+  .empleadoItem img {
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho de la tarjeta */
+    border-radius: 50%;
+  }
+  
+/* Agrega estas clases para las animaciones */
+.animated {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

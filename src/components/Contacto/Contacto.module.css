@@ -1,0 +1,94 @@
+.contactoContainer {
+    width: 73%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    margin-top: 20px;
+    overflow: hidden; /* Limpiar el float */
+    margin-top: 10%;
+  }
+  
+  .contactoContainer h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+.mapContainer {
+    float: left;
+    width: 50%;
+    box-sizing: border-box; /* Asegura que el borde se incluya en el ancho total */
+  }
+
+  .popupContent {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .popupLogo {
+    width: 50px;
+    border-radius: 50%;
+  }
+  
+  .popupText {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #333; /* Cambia el color del texto según tu preferencia */
+  }
+  
+  .formContainer {
+    float: right;
+    width: 49%;
+    box-sizing: border-box; /* Asegura que el borde se incluya en el ancho total */
+    margin-top: 20px;
+  }
+  
+
+/* Estilos adicionales para el formulario (añade según sea necesario) */
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto;
+  }
+  
+  .formContainer label {
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  
+  .formContainer input,
+  .formContainer textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .formContainer textarea {
+    resize: vertical; /* Permite la redimensión vertical del área de texto */
+  }
+  
+  .formContainer button {
+    background-color: #373737;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formContainer button:hover {
+    background-color: #212121;
+    color: rgb(255, 255, 255);
+  }
+  

@@ -1,0 +1,42 @@
+/* Footer.module.css */
+.footerContainer {
+    background-color: #000000; /* Ajusta el color de fondo según tu diseño */
+    color: #fff; /* Ajusta el color del texto según tu diseño */
+    padding: 20px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+  }
+  
+  .contactInfo {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .contactInfo div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contactInfo p {
+    margin: 0;
+    margin-left: 10px;
+  }
+  .logoContainer {
+    display: flex;
+    align-items: center;
+
+  }
+  
+  .logoContainer img {
+    width: 100px; /* Ajusta el ancho del logo según tus preferencias */
+    height: auto;
+    margin-right: 10px; /* Ajusta el margen entre el logo y el párrafo */
+  }
+  
+  .logoContainer p {
+    margin: 0;
+    color: #fff; /* Ajusta el color del texto según tu diseño */
+  }
