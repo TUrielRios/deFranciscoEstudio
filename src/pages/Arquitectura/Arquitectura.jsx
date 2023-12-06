@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { fetchObras, selectObrasTerminadas, selectObrasEnConstruccion } from '../../redux/features/obrasSlice';
+import { useDispatch } from 'react-redux';
+import { fetchObras} from '../../redux/features/obrasSlice';
 import styles from './Arquitectura.module.css';
 import { useNavigate } from "react-router-dom";
 import Footer from '../../components/Footer/Footer'
 
 const Arquitectura = () => {
   const dispatch = useDispatch();
-  const obrasTerminadas = useSelector(selectObrasTerminadas);
-  const obrasEnConstruccion = useSelector(selectObrasEnConstruccion);
+
 
   const history = useNavigate();
 

@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './ObraCard.module.css'; // Asegúrate de tener un archivo CSS para los estilos
-import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 
 const ObraCard = ({ obra }) => {
-  const { id, nombre, año, imagenes, finalidades, superficie, lugar, estado } = obra;
+  const { id, nombre, año, imagenes, lugar } = obra;
 
   return (
     <div className={styles.obraCard}>

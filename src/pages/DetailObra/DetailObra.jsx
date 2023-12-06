@@ -22,7 +22,7 @@ const Detail = () => {
     }
   }, [dispatch, obrasCargadas]);
 
-  const obra = obrasTerminadas.find((obra) => obra.id == id);
+  const obra = obrasTerminadas.find((obra) => obra.id === parseInt(id, 10));
 
   if (!obrasCargadas) {
     return <div>Cargando...</div>; // Otra opción es mostrar un spinner o mensaje de carga
@@ -32,7 +32,7 @@ const Detail = () => {
     return <div className={styles.error}>Obras no encontradas</div>;
   }
 
-  const { nombre, año, lugar, imagenes, finalidades, superficie, estado } = obra;
+  const { nombre, año, lugar, imagenes, finalidades, superficie } = obra;
 
   const sliderSettings = {
     dots: true,
