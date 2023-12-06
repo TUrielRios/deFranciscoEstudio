@@ -34,9 +34,9 @@
   
   .image {
     width: 100%;
-    height: 500px; /* o el valor que desees */
+    height: 400px; /* o el valor que desees */
     border-radius: 8px;
-    object-fit: cover; 
+    object-fit: contain; 
   }
   
   /* Estilos para los datos en la parte derecha */

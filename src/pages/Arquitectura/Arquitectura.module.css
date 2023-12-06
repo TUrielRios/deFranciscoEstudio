@@ -17,7 +17,7 @@
   border-radius: 30px;
   overflow: hidden;
   margin: 20px;
-
+  text-align: center;
 }
 
 .locationTitle {
@@ -25,14 +25,20 @@
   bottom: 50%; /* Posiciona el texto en la mitad inferior del contenedor */
   left: 50%; /* Posiciona el texto en el centro horizontal del contenedor */
   transform: translate(-50%, 50%); /* Centra el texto vertical y horizontalmente */
-  font-size: 18px;
+  font-size: 22px;
   color: #fff;
   text-transform: uppercase;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 5px;
 }
 
-.locationContainer img {
+.image {
   width: 100%;
   height: auto;
+  opacity: 1; /* Opacidad inicial */
+  transition: opacity 0.7s ease; /* Transición para la opacidad */
 }
+.image:hover{
+  opacity: 0.2;
+}
+

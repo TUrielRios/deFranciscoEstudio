@@ -1,44 +1,59 @@
- 
-  .obraCard {
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s;
-    /* Ajusta el ancho para que se ajuste a una columna */
-    width: calc(26% - 20px); /* Resta el espacio entre tarjetas para evitar desbordamiento */
-    height: auto;
-    margin: 0 auto;
-    background-color: whitesmoke;
-  }
+/* ObraCard.module.css */
 
-  
-  .image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .details {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  h2 {
-    margin: 0;
-    font-size: 1.2rem; /* Ajusta según tus necesidades */
-  }
-  
-  p {
-    margin: 0 auto;
-    font-size: 0.9rem; /* Ajusta según tus necesidades */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.obraCard {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  max-width: 30%;
+  width: 100%;
+}
 
+.obraCard:hover {
+  transform: scale(1.05);
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; /* Esquinas redondeadas solo en la parte superior */
+  opacity: 1; /* Opacidad inicial */
+  transition: opacity 0.7s ease; /* Transición para la opacidad */
+
+}
+.image:hover{
+  opacity: 0.2;
+}
+
+.centeredText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 10px;
+}
+
+.centeredText p {
+  margin: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 0.9; /* Aumenté la opacidad del texto */
+  font-weight: bold; /* Hice el texto en negrita para que destaque más */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agregué un sombreado para mayor visibilidad */
+}
+
+  .link{
+    text-decoration: none;
   }
-  
   button { 
     margin: 10px auto;/* Mueve el botón hacia la parte inferior del contenedor */
     padding: 10px 20px;
