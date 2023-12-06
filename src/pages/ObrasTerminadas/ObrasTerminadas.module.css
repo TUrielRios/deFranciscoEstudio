@@ -10,6 +10,8 @@
   text-decoration: overline;
   text-transform: uppercase;
   padding: 20px;
+  margin-top: 5%;
+  letter-spacing: 2px;
 }
 
 .obrasTerminadasContainer {

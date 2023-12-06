@@ -1,0 +1,82 @@
+/* Muralismos.module.css */
+
+.muralismosContainer {
+    text-align: left;
+    padding: 20px;
+    background-color: whitesmoke;
+    margin: 5% 20%;
+  }
+  
+  .title {
+    font-size: 36px; /* Tamaño del texto */
+    margin-left: 20px; /* Espaciado a la izquierda */
+    border-bottom: 1px solid black;
+    width: 70%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .socialIcons{
+    display: flex;
+    justify-content: right;
+  }
+  .socialIcons a {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: right; /* Alinea verticalmente los elementos */
+    margin-right: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 60px;
+    width: 5%;
+  }
+  .socialIcons a:hover {
+    color: rgb(112, 112, 112);
+  }
+  
+  .muralesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .muralT{
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  
+  .muralItem {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .imagenContainer {
+    margin-top: 10px;
+  }
+  
+  .imagen {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .link{
+    text-decoration: none;
+  }
+  .btnVolver{
+    display: flex;
+    align-items: center;
+    margin-top: 0 auto;
+  }
+  /* Agrega este estilo al final de tu archivo CSS */
+.linkToTop {
+    position: absolute;
+    top: 19%;
+    right: 19.95%;
+    z-index: 1000;
+  }
+  .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

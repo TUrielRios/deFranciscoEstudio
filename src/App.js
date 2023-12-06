@@ -6,6 +6,7 @@ import { Route,Routes } from 'react-router-dom';
 import ObrasTerminadas from './pages/ObrasTerminadas/ObrasTerminadas';
 import AllObras from './pages/AllObras/AllObras';
 import Detail from './pages/DetailObra/DetailObra';
+import Muralismos from './pages/Muralismos/Muralismos';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/arquitectura/obras-terminadas" element={<ObrasTerminadas />} />
           <Route exact path="/arquitectura/copia-de-polyfilm" element={<AllObras />} />
           <Route exact path="/arquitectura/obras-terminadas/:id" element={<Detail />} />
+          <Route exact path="/muralismo" element={<Muralismos />} />
 
       </Routes>
       </div>

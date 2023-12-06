@@ -8,6 +8,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import styles from './Detail.module.css';
 import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
+
+
 
 const Detail = () => {
   const { id } = useParams();
@@ -65,7 +68,9 @@ const Detail = () => {
             <p>{finalidades}</p>
             <p>{superficie}</p>
             <Link className={styles.link} to="/arquitectura/obras-terminadas">
-            <button className={styles.btnVolver}>Volver</button>
+            <button className={styles.btnVolver}>
+            <FaArrowLeft />
+            </button>
             </Link>
         </div>
 
