@@ -48,7 +48,6 @@ const Detail = () => {
   return (
     <>
         <div className={styles.detailContainer}>
-
         {/* Agrega aquí más detalles según sea necesario */}
         <Slider {...sliderSettings} className={styles.slider}>
             {imagenes.map((imagen, index) => (

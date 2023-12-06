@@ -1,17 +1,16 @@
 .detailContainer {
-    margin: 5% 20%;
-    padding: 20px;
+  margin: 5% auto; /* Centrado horizontalmente y con un margen superior del 5% */
+  padding: 20px;
+  background-color: rgb(203, 203, 203);
+  border-radius: 20px;
+  display: flex;
+  align-items: center; /* Centrado verticalmente */
+  /* Cambios en la dirección del flujo */
+  flex-direction: row;
+  border: 1px solid red;
+  width: 70%;
+}
 
-    background-color: rgb(203, 203, 203);
-    border-radius: 20px;
-    display: flex;
-    align-items: center; /* Centrado verticalmente */
-  
-    /* Cambios en la dirección del flujo y justificación */
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
   .title {
     color: #333;
     font-size: 24px;
@@ -35,7 +34,7 @@
   .image {
     width: 100%;
     height: 400px; /* o el valor que desees */
-    border-radius: 20%;
+    border-radius: 8px;
     object-fit: contain; 
   }
   

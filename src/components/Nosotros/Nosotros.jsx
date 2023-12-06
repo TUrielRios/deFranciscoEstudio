@@ -53,7 +53,7 @@ fetchData();
 }, [dispatch]);
 
 if (loading) {
-    return <p>Cargando...</p>;
+    return <p>Aguarde un momento...</p>;
 }
 
 if (error) {

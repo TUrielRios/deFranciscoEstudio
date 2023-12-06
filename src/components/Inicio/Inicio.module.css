@@ -8,6 +8,7 @@
     color: rgb(255, 255, 255);
     overflow: hidden; /* Añadido para ocultar el desbordamiento de la imagen */
     padding: 20px;
+    margin-top: 5%;
 
   }
   

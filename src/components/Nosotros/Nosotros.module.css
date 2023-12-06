@@ -38,9 +38,12 @@
     margin: 10px auto; /* Ajusta la distancia entre la palabra y el subrayado */
   }
   .content p {
-    margin: 20px 0; /* Puedes ajustar estos valores según sea necesario */
+    display: flex;
+    justify-content: center;
+    margin: 5%; /* Puedes ajustar estos valores según sea necesario */
     font-size: 17px; /* Puedes ajustar el tamaño del texto */
     line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
+    text-align: center;
   }
   .scrollDown {
     margin-top: 20px;

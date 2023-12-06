@@ -41,4 +41,12 @@
 .image:hover{
   opacity: 0.2;
 }
-
+.footer {
+  position: absolute;
+  bottom: 0; /* o ajusta según sea necesario */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

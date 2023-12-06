@@ -52,7 +52,7 @@ const Contacto = () => {
             </Marker>
             </MapContainer>
             <p className={styles.address}>
-                Dirección: Echeverría 1328, CABA, Arg
+                Dirección: Echeverría 1328, CABA, Argentina
             </p>
         </div>
         <div className={styles.formContainer}>
@@ -62,7 +62,7 @@ const Contacto = () => {
                 <input type="text" name="nombre" />
                 </label>
                 <label>
-                Correo Electrónico:
+                Correo electrónico:
                 <input type="email" name="email" />
                 </label>
                 <label>
