@@ -7,7 +7,6 @@
   align-items: center; /* Centrado verticalmente */
   /* Cambios en la dirección del flujo */
   flex-direction: row;
-  border: 1px solid red;
   width: 70%;
 }
 
