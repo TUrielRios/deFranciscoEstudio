@@ -1,0 +1,38 @@
+/* ExploreTattoos.module.css */
+
+.exploreContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5%;
+}
+.locationContainer {
+  position: relative;
+  width: 500px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 20px;
+
+}
+
+.locationTitle {
+  position: absolute;
+  bottom: 50%; /* Posiciona el texto en la mitad inferior del contenedor */
+  left: 50%; /* Posiciona el texto en el centro horizontal del contenedor */
+  transform: translate(-50%, 50%); /* Centra el texto vertical y horizontalmente */
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 5px;
+}
+
+.locationContainer img {
+  width: 100%;
+  height: auto;
+}

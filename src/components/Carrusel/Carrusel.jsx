@@ -28,7 +28,7 @@ const Carrusel = () => {
 
   return (
     <animated.div id="carrusel" className={`${styles.carruselContainer} ${styles.animated}`} style={mainAnimation} ref={ref}>
-      <h1>Contratistas con quienes trabajamos</h1>
+      <h1>Contratistas y proveedores con quienes trabajamos</h1>
       <div className={styles.logoImageContainer}>
         <animated.div style={{ ...carruselAnimation, display: 'flex' }}>
           <img src={logos} alt="Logos" className={`${styles.logoImage} ${styles.logoImageDuplicate}`}/>

@@ -40,6 +40,13 @@
     margin-top: 5px;
     color: #333; /* Cambia el color del texto según tu preferencia */
   }
+
+  .address {
+    text-align: left;
+    font-size: 14px;
+    color: #b7b7b7; /* Ajusta el color del texto */
+}
+
   
   .formContainer {
     float: right;

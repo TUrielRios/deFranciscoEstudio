@@ -26,7 +26,6 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
-
     position: relative;
   }
   
@@ -38,7 +37,11 @@
     background-color: black;
     margin: 10px auto; /* Ajusta la distancia entre la palabra y el subrayado */
   }
-  
+  .content p {
+    margin: 20px 0; /* Puedes ajustar estos valores según sea necesario */
+    font-size: 17px; /* Puedes ajustar el tamaño del texto */
+    line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
+  }
   .scrollDown {
     margin-top: 20px;
   }

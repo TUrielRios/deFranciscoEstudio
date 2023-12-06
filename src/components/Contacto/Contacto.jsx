@@ -51,6 +51,9 @@ const Contacto = () => {
                 </Popup>
             </Marker>
             </MapContainer>
+            <p className={styles.address}>
+                Dirección: Echeverría 1328, CABA, Arg
+            </p>
         </div>
         <div className={styles.formContainer}>
             <form onSubmit={handleSubmit}>

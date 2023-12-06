@@ -1,0 +1,56 @@
+ 
+  .obraCard {
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+    /* Ajusta el ancho para que se ajuste a una columna */
+    width: calc(26% - 20px); /* Resta el espacio entre tarjetas para evitar desbordamiento */
+    height: auto;
+    margin: 0 auto;
+    background-color: whitesmoke;
+  }
+
+  
+  .image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .details {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 1.2rem; /* Ajusta según tus necesidades */
+  }
+  
+  p {
+    margin: 0 auto;
+    font-size: 0.9rem; /* Ajusta según tus necesidades */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  button { 
+    margin: 10px auto;/* Mueve el botón hacia la parte inferior del contenedor */
+    padding: 10px 20px;
+    font-size: 1rem; /* Ajusta según tus necesidades */
+    background-color: #3f3f3f; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #272727; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+  }

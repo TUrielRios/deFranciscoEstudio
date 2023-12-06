@@ -11,10 +11,10 @@ const Header = () => {
         <Link to="/" className={styles.logo}>  </Link>
         <div className={styles.navLinks}>
           <Link to="/">Inicio</Link>
-          <a href="#nosotros">Nosotros</a>
+          <a href="/#nosotros">Nosotros</a>
           <Link to="/arquitectura">Arquitectura</Link>
           <Link to="/muralismo">Muralismo</Link>
-          <a href="#contacto">Contacto</a>
+          <a href="/#contacto">Contacto</a>
         </div>
       </nav>
     </header>

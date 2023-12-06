@@ -1,0 +1,38 @@
+.footer{
+    display: flex;
+    justify-content: center;
+}
+
+.containerF {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre las imágenes */
+    background-color: rgb(115, 115, 115);
+    margin: 5% 20%;
+    padding: 30px;
+    border-radius: 20px;
+  }
+  
+.containerF p {
+    grid-column: span 2; /* Ocupa el espacio de ambas columnas */
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgb(243, 243, 243);
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .containerF img {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    height: auto; /* Mantén la proporción original de la imagen */
+    border-radius: 8px; /* Agrega bordes redondeados si lo deseas */
+  }
+
+  .link{
+    text-decoration: none;
+  }
+  .btnVolver{
+    display: flex;
+    align-items: center;
+    margin-top: 0 auto;
+  }

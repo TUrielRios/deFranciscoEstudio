@@ -1,0 +1,66 @@
+.detailContainer {
+    margin: 5% 20%;
+    padding: 20px;
+
+    background-color: rgb(203, 203, 203);
+    border-radius: 20px;
+    display: flex;
+    align-items: center; /* Centrado verticalmente */
+  
+    /* Cambios en la dirección del flujo y justificación */
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .slider {
+    margin: 10px;
+    width: 60%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .image {
+    width: 100%;
+    height: 500px; /* o el valor que desees */
+    border-radius: 8px;
+    object-fit: cover; 
+  }
+  
+  /* Estilos para los datos en la parte derecha */
+  .dataContainer {
+    padding: 10px;
+    flex-grow: 1; /* Ocupa el espacio restante */
+    margin-left: 20px; /* Añade un espacio entre el slider y los datos */
+  }
+  
+  .dataContainer p {
+    margin: 10px 0; /* Espacio entre los elementos de datos */
+  }
+  .link{
+    text-decoration: none;
+  }
+  .btnVolver{
+    display: flex;
+    align-items: center;
+    margin-top: 0 auto;
+    color: whitesmoke;
+    background-color: black;
+  }
+  .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
