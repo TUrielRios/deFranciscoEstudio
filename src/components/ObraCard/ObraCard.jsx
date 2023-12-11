@@ -9,7 +9,7 @@ const ObraCard = ({ obra }) => {
 
   return (
     <div className={styles.obraCard}>
-      <Link to={`/arquitectura/obras-terminadas/${id}`} className={styles.link}>
+      <Link to={`/arquitectura/obras/${id}`} className={styles.link}>
         <img src={imagenes[0]} alt={`Imagen de ${nombre}`} className={styles.image} />
 
         <div className={styles.centeredText}>

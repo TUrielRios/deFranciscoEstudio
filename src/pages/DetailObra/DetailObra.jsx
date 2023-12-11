@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectObrasTerminadas, fetchObras, selectObrasCargadas } from '../../redux/features/obrasSlice';
+import { selectObrasTerminadas, fetchObras, selectObrasCargadas, selectObrasEnConstruccion } from '../../redux/features/obrasSlice';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -10,32 +10,34 @@ import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 
-
-
 const Detail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const obrasTerminadas = useSelector(selectObrasTerminadas);
+  const obrasEnConstruccion = useSelector(selectObrasEnConstruccion);
   const obrasCargadas = useSelector(selectObrasCargadas);
 
   useEffect(() => {
-    // Llama a la acción fetchObras si las obras no han sido cargadas
+    // Call the fetchObras action if the works have not been loaded
     if (!obrasCargadas) {
       dispatch(fetchObras());
     }
   }, [dispatch, obrasCargadas]);
 
-  const obra = obrasTerminadas.find((obra) => obra.id === parseInt(id, 10));
+  const obraTerminada = obrasTerminadas.find((obra) => obra.id === parseInt(id, 10));
+  const obraEnConstruccion = obrasEnConstruccion.find((obra) => obra.id === parseInt(id, 10));
+
+  const obra = obraTerminada || obraEnConstruccion;
 
   if (!obrasCargadas) {
-    return <div>Cargando...</div>; // Otra opción es mostrar un spinner o mensaje de carga
+    return <div>Cargando...</div>; // Another option is to show a spinner or loading message
   }
 
   if (!obra) {
-    return <div className={styles.error}>Obras no encontradas</div>;
+    return <div className={styles.error}>Obra no encontrada</div>;
   }
 
-  const { nombre, año, lugar, imagenes, finalidades, superficie } = obra;
+  const { nombre, año, lugar, imagenes, finalidades, superficie, estado } = obra;
 
   const sliderSettings = {
     dots: true,
@@ -47,40 +49,34 @@ const Detail = () => {
 
   return (
     <>
-        <div className={styles.detailContainer}>
-        {/* Agrega aquí más detalles según sea necesario */}
+      <div className={styles.detailContainer}>
+        {/* Add more details here as needed */}
         <Slider {...sliderSettings} className={styles.slider}>
-            {imagenes.map((imagen, index) => (
+          {imagenes.map((imagen, index) => (
             <div key={index} className={styles.slide}>
-                    <img
-                    src={imagen}
-                    alt={`Imagen ${index + 1}`}
-                    className={styles.image}
-                    />
+              <img src={imagen} alt={`Imagen ${index + 1}`} className={styles.image} />
             </div>
-            ))}
+          ))}
         </Slider>
         <div className={styles.dataContainer}>
-        <h2 className={styles.title}>{nombre}</h2>
-            <p>{año}</p>
-            <p>{lugar}</p>
-            <p>{finalidades}</p>
-            <p>{superficie}</p>
-            <Link className={styles.link} to="/arquitectura/obras-terminadas">
+          <h2 className={styles.title}>{nombre}</h2>
+          <p>{año}</p>
+          <p>{lugar}</p>
+          <p>{finalidades}</p>
+          <p>{superficie}</p>
+          <Link className={styles.link} to={estado === 'Terminado' ? "/arquitectura/obras-terminadas" : "/arquitectura/obras-en-construcción"}>
             <button className={styles.btnVolver}>
-            <FaArrowLeft />
+              <FaArrowLeft />
             </button>
-            </Link>
+          </Link>
         </div>
 
-        {/* Agrega más contenido según sea necesario */}
-        
-        </div>
-        <div className={styles.footer}>
+        {/* Add more content as needed */}
+      </div>
+      <div className={styles.footer}>
         <Footer />
-        </div>       
+      </div>
     </>
-
   );
 };
 

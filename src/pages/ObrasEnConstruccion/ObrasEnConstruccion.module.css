@@ -1,0 +1,53 @@
+/* ObrasEnConstruccion.module.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust the height as needed for full vertical centering */
+}
+
+.title {
+    color: rgb(203, 203, 203);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: overline;
+    text-transform: uppercase;
+    padding: 20px;
+    margin-top: 5%;
+    letter-spacing: 2px;
+}
+
+.obrasEnConstruccionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 5%;
+    padding: 20px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.btnVolver {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Add space between Ver todas las obras button and Volver button */
+}
+
+.polyfilmbtn {
+    display: flex;
+    align-items: center;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Añade espaciado alrededor del contenido del pie de página si es necesario */
+}

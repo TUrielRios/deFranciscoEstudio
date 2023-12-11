@@ -11,7 +11,8 @@ import Footer from '../Footer/Footer';
 
 const Inicio = () => {
   return (
-    <div className={styles.inicioSection}>
+    <>
+        <div className={styles.inicioSection}>
       <div className={styles.backgroundImage}>
         {/* Coloca tu logo u otra imagen de fondo aquí */}
         <img src={fondo} alt="" />
@@ -31,6 +32,10 @@ const Inicio = () => {
       <Contacto/>
       <Footer />
     </div>
+
+    
+    </>
+
     
   );
 };

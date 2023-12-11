@@ -1,12 +1,17 @@
 /* ObrasTerminadas.module.css */
+
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
-.title{
+
+.title {
   color: rgb(203, 203, 203);
   display: flex;
   justify-content: center;
+  align-items: center;
   text-decoration: overline;
   text-transform: uppercase;
   padding: 20px;
@@ -15,25 +20,25 @@
 }
 
 .obrasTerminadasContainer {
-    display: flex; /* O usa display: grid; según tus preferencias */
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea si no caben en el ancho del contenedor */
-    gap: 20px; /* Espacio entre tarjetas */
-    margin: 0 5%;
-    padding: 20px;
-  }
-  .link{
-    text-decoration: none;
-  }
-  .btnVolver{
-    display: flex;
-    align-items: center;
-    margin-top: 0 auto;
-  }
-  /* Otros estilos según sea necesario */
-  .link{
-    text-decoration: none;
-  }
-.polyfilmbtn{
-    display: flex;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 8%;
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.btnVolver {
+  display: flex;
+  align-items: center;
+  margin-top: 20px; /* Add space between Ver todas las obras button and Volver button */
+}
+
+.polyfilmbtn {
+  display: flex;
+  align-items: center;
 }
