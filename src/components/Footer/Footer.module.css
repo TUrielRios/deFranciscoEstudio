@@ -1,3 +1,4 @@
+/* Estilos base */
 .footerContainer {
   background-color: #000000; /* Ajusta el color de fondo según tu diseño */
   color: #fff; /* Ajusta el color del texto según tu diseño */
@@ -6,36 +7,50 @@
   justify-content: space-between;
   align-items: center;
   width: 73%;
-
 }
-  
-  .contactInfo {
-    display: flex;
-    gap: 20px;
+
+.contactInfo {
+  display: flex;
+  gap: 20px;
+}
+
+.contactInfo div {
+  display: flex;
+  align-items: center;
+}
+
+.contactInfo p {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer img {
+  width: 100px; /* Ajusta el ancho del logo según tus preferencias */
+  height: auto;
+  margin-right: 10px; /* Ajusta el margen entre el logo y el párrafo */
+}
+
+.logoContainer p {
+  margin: 0;
+  color: #fff; /* Ajusta el color del texto según tu diseño */
+}
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
+    align-items: center; /* Alinea los elementos al principio en pantallas pequeñas */
   }
-  
-  .contactInfo div {
-    display: flex;
-    align-items: center;
-  }
-  
-  .contactInfo p {
-    margin: 0;
-    margin-left: 10px;
-  }
+
+  .contactInfo,
   .logoContainer {
     display: flex;
-    align-items: center;
-
+    flex-direction: column; /* Alinea verticalmente el logo y el párrafo en pantallas más pequeñas */
+    align-items: center; 
   }
-  
-  .logoContainer img {
-    width: 100px; /* Ajusta el ancho del logo según tus preferencias */
-    height: auto;
-    margin-right: 10px; /* Ajusta el margen entre el logo y el párrafo */
-  }
-  
-  .logoContainer p {
-    margin: 0;
-    color: #fff; /* Ajusta el color del texto según tu diseño */
-  }
+}

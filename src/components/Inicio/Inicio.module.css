@@ -1,67 +1,78 @@
 /* Inicio.module.css */
+
+/* Estilos para pantallas grandes */
 .inicioSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    overflow: hidden; /* Añadido para ocultar el desbordamiento de la imagen */
-    padding: 20px;
-    margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  padding: 20px;
+  margin-top: 5%;
+}
 
-  }
-  
-  .backgroundImage {
+.backgroundImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ajusta el ancho de la imagen según tus preferencias */
-    height: auto; /* Ajusta la altura de la imagen según tus preferencias */
-    overflow: hidden; /* Añadido para ocultar el desbordamiento de la imagen */
-  }
+.backgroundImage img {
+  width: 45%;
+  height: auto;
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+}
+
+.socialIcons a {
+  margin-right: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+}
+
+.socialIcons a:hover {
+  color: rgb(112, 112, 112);
+}
+
+.scrollDown {
+  margin-top: 20px;
+}
+
+.scrollDown a {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.scrollDown a:hover {
+  color: rgb(62, 62, 62);
+}
+
+/* Estilos para pantallas medianas */
+@media only screen and (max-width: 768px) {
   .backgroundImage img {
-    width: 45%;
-    height: auto;
-/* Añadido para que la imagen cubra completamente el contenedor */
+    width: 80%;
   }
-  
-  .content {
-    text-align: center;
-    z-index: 1; /* Añadido para que el contenido aparezca por encima de la imagen de fondo */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3%;
+}
 
-
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 480px) {
+  .backgroundImage img {
+    width: 100%;
   }
-  
-
-  
-  .socialIcons a {
-    margin-right: 10px;
-    color: rgb(255, 255, 255);
-    font-size: 30px;
-  }
-  .socialIcons a:hover {
-    color: rgb(112, 112, 112);
-  }
-  
-  .scrollDown {
-    margin-top: 20px;
-  }
-  
-  .scrollDown a {
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-  }
-  .scrollDown a:hover {
-    color: rgb(62, 62, 62);
-  }
-  
+}

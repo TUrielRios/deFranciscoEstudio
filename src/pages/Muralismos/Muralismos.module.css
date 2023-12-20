@@ -1,82 +1,101 @@
-/* Muralismos.module.css */
-
 .muralismosContainer {
-    text-align: left;
-    padding: 20px;
-    background-color: whitesmoke;
-    margin: 5% 20%;
+  text-align: left;
+  padding: 20px;
+  background-color: whitesmoke;
+  margin: 5% 20%; /* Ajuste del margen para dispositivos más pequeños */
+}
+
+.title {
+  font-size: 36px;
+  margin-left: 10px; /* Reducción del espaciado a la izquierda */
+  border-bottom: 1px solid black;
+  width: 70%; /* Ajuste del ancho del título para dispositivos más pequeños */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+}
+
+.socialIcons a {
+  margin-right: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 40px; /* Reducción del tamaño de los íconos sociales */
+  width: auto; /* Ajuste del ancho para dispositivos más pequeños */
+}
+
+.socialIcons a:hover {
+  color: rgb(112, 112, 112);
+}
+
+.muralesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.muralT {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.muralItem {
+  margin: 10px; /* Reducción del margen */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.imagenContainer {
+  margin-top: 10px;
+}
+
+.imagen {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.btnVolver {
+  display: flex;
+  align-items: center;
+  margin-top: 0 auto;
+}
+
+.linkToTop {
+  position: absolute;
+  top: 10%; /* Ajuste de la posición para dispositivos más pequeños */
+  right: 5%; /* Ajuste de la posición para dispositivos más pequeños */
+  z-index: 1000;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para dispositivos más pequeños */
+@media only screen and (max-width: 768px) {
+  .muralismosContainer{
+    margin: 5% 5%; /* Ajuste del margen para dispositivos más pequeños */
   }
-  
   .title {
-    font-size: 36px; /* Tamaño del texto */
-    margin-left: 20px; /* Espaciado a la izquierda */
-    border-bottom: 1px solid black;
-    width: 70%;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  .socialIcons{
-    display: flex;
-    justify-content: right;
-  }
-  .socialIcons a {
-    display: flex;
-    justify-content: flex-end; /* Alinea los elementos a la derecha */
-    align-items: right; /* Alinea verticalmente los elementos */
-    margin-right: 10px;
-    color: rgb(0, 0, 0);
-    font-size: 60px;
-    width: 5%;
-  }
-  .socialIcons a:hover {
-    color: rgb(112, 112, 112);
-  }
-  
-  .muralesList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .muralT{
-    text-transform: uppercase;
-    font-size: 12px;
-  }
-  
-  .muralItem {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .imagenContainer {
-    margin-top: 10px;
-  }
-  
-  .imagen {
-    max-width: 100%;
-    border-radius: 8px;
+    font-size: 28px;
+    width: 90%;
   }
 
-  .link{
-    text-decoration: none;
+  .socialIcons a {
+    font-size: 30px;
   }
-  .btnVolver{
-    display: flex;
-    align-items: center;
-    margin-top: 0 auto;
+
+  .muralItem {
+    margin: 5px;
   }
-  /* Agrega este estilo al final de tu archivo CSS */
-.linkToTop {
-    position: absolute;
-    top: 19%;
-    right: 19.95%;
-    z-index: 1000;
-  }
-  .footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+}

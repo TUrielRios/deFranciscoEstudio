@@ -8,6 +8,7 @@ import AllObras from './pages/AllObras/AllObras';
 import Detail from './pages/DetailObra/DetailObra';
 import Muralismos from './pages/Muralismos/Muralismos';
 import ObrasEnConstruccion from './pages/ObrasEnConstruccion/ObrasEnConstruccion';
+import Admin from './pages/Admin/Admin';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/arquitectura/copia-de-polyfilm" element={<AllObras />} />
           <Route exact path="/arquitectura/obras/:id" element={<Detail />} />
           <Route exact path="/muralismo" element={<Muralismos />} />
+          <Route exact path="/admin" element={<Admin />} />
 
       </Routes>
       </div>

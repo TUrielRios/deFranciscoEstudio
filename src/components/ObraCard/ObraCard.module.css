@@ -1,13 +1,10 @@
-/* ObraCard.module.css */
-
 .obraCard {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s;
-  max-width: 30%;
-  width: 100%;
+  width: 32%;
 }
 
 .obraCard:hover {
@@ -24,12 +21,12 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px 8px 0 0; /* Esquinas redondeadas solo en la parte superior */
-  opacity: 1; /* Opacidad inicial */
-  transition: opacity 0.7s ease; /* Transición para la opacidad */
-
+  border-radius: 8px 8px 0 0;
+  opacity: 1;
+  transition: opacity 0.7s ease;
 }
-.image:hover{
+
+.image:hover {
   opacity: 0.2;
 }
 
@@ -46,26 +43,47 @@
   margin: 0;
   color: #ffffff;
   text-transform: uppercase;
-  opacity: 0.9; /* Aumenté la opacidad del texto */
-  font-weight: bold; /* Hice el texto en negrita para que destaque más */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agregué un sombreado para mayor visibilidad */
+  opacity: 0.9;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-  .link{
-    text-decoration: none;
+.link {
+  text-decoration: none;
+}
+
+button { 
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #3f3f3f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #272727;
+}
+
+/* Añadido estilo para mejorar la legibilidad del texto en pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+  .centeredText {
+    padding: 5px;
   }
-  button { 
-    margin: 10px auto;/* Mueve el botón hacia la parte inferior del contenedor */
-    padding: 10px 20px;
-    font-size: 1rem; /* Ajusta según tus necesidades */
-    background-color: #3f3f3f; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none;
-    border-radius: 5px;
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  .obraCard {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.3s;
+    width: 50%;
   }
-  
-  button:hover {
-    background-color: #272727; /* Cambia el color de fondo al pasar el ratón sobre el botón */
-  }
+}

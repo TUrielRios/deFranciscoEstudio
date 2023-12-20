@@ -1,5 +1,4 @@
-/* ExploreTattoos.module.css */
-
+/* Estilos base */
 .exploreContainer {
   display: flex;
   align-items: center;
@@ -7,9 +6,11 @@
   justify-content: center;
   margin-top: 5%;
 }
+
 .locationContainer {
   position: relative;
-  width: 500px;
+  width: 100%; /* Cambiado el ancho a 100% para ocupar todo el ancho del contenedor padre */
+  max-width: 500px; /* Ancho máximo para evitar que sea demasiado grande en pantallas grandes */
   height: 350px;
   background-size: cover;
   background-position: center;
@@ -22,9 +23,9 @@
 
 .locationTitle {
   position: absolute;
-  bottom: 50%; /* Posiciona el texto en la mitad inferior del contenedor */
-  left: 50%; /* Posiciona el texto en el centro horizontal del contenedor */
-  transform: translate(-50%, 50%); /* Centra el texto vertical y horizontalmente */
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
   font-size: 22px;
   color: #fff;
   text-transform: uppercase;
@@ -35,18 +36,27 @@
 .image {
   width: 100%;
   height: auto;
-  opacity: 1; /* Opacidad inicial */
-  transition: opacity 0.7s ease; /* Transición para la opacidad */
+  opacity: 1;
+  transition: opacity 0.7s ease;
 }
-.image:hover{
+
+.image:hover {
   opacity: 0.2;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0; /* o ajusta según sea necesario */
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; /* Alinea el contenido en la parte inferior */
+  height: 30vh; /* Ocupa el 100% de la altura del viewport */
+  margin-top: auto; /* Empuja el contenido hacia abajo */
+}
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+  .locationContainer {
+    max-width: 500px; /* Hace que el contenedor sea del 100% en pantallas pequeñas */
+    height: auto;
+  }
+  
 }

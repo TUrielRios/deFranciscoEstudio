@@ -1,80 +1,84 @@
 /* Nosotros.module.css */
-.nosotrosSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Cambiado a columna para apilar el contenido */
-    padding: 20px;
-    margin-top: 15%;
-    padding-top: 5%;
-    width: 70%;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    overflow: hidden;
-  }
-  
-  .content {
-    text-align: center;
-    z-index: 1;
-  }
 
-  .content h1 {
-    color: black;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
-    position: relative;
-  }
-  
-  .content h1::after {
-    content: '';
-    display: block;
-    width: 20%;
-    height: 2px;
-    background-color: black;
-    margin: 10px auto; /* Ajusta la distancia entre la palabra y el subrayado */
-  }
-  .content p {
-    display: flex;
-    justify-content: center;
-    margin: 5%; /* Puedes ajustar estos valores según sea necesario */
-    font-size: 17px; /* Puedes ajustar el tamaño del texto */
-    line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
-    text-align: center;
-  }
-  .scrollDown {
-    margin-top: 20px;
-  }
-  
-  .scrollDown a {
-    font-size: 24px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-  }
-  
-  .empleadoContainer {
-    display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .empleadoItem {
-    width: 250px; /* Ancho de cada tarjeta de empleado */
-    margin: 3%; /* Espaciado entre las tarjetas */
-    text-align: center;
-  }
-  
-  .empleadoItem img {
-    width: 100%; /* Hace que la imagen ocupe el 100% del ancho de la tarjeta */
-    border-radius: 50%;
-  }
-  
+/* Estilos base */
+.nosotrosSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Cambiado a columna para apilar el contenido */
+  padding: 20px;
+  margin-top: 15%;
+  padding-top: 5%;
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+}
+
+.content h1 {
+  color: black;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+}
+
+.content h1::after {
+  content: '';
+  display: block;
+  width: 20%;
+  height: 2px;
+  background-color: black;
+  margin: 10px auto; /* Ajusta la distancia entre la palabra y el subrayado */
+}
+
+.content p {
+  display: flex;
+  justify-content: center;
+  margin: 5%; /* Puedes ajustar estos valores según sea necesario */
+  font-size: 17px; /* Puedes ajustar el tamaño del texto */
+  line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
+  text-align: center;
+}
+
+.scrollDown {
+  margin-top: 20px;
+}
+
+.scrollDown a {
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.empleadoContainer {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.empleadoItem {
+  width: 250px; /* Ancho de cada tarjeta de empleado */
+  margin: 3%; /* Espaciado entre las tarjetas */
+  text-align: center;
+}
+
+.empleadoItem img {
+  width: 100%; /* Hace que la imagen ocupe el 100% del ancho de la tarjeta */
+  border-radius: 50%;
+}
+
 /* Agrega estas clases para las animaciones */
 .animated {
   opacity: 0;
@@ -85,4 +89,26 @@
 .visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Estilos para pantallas medianas */
+@media only screen and (max-width: 768px) {
+  .nosotrosSection {
+    width: 80%; /* Ajustar el ancho del contenedor en pantallas medianas */
+  }
+
+  .empleadoItem {
+    width: 44%; /* Ajustar el ancho de cada tarjeta en pantallas medianas */
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 480px) {
+  .nosotrosSection {
+    width: 80%; /* Ajustar el ancho del contenedor en pantallas pequeñas */
+  }
+
+  .empleadoItem {
+    width: 44%; /* Ajustar el ancho de cada tarjeta al 100% en pantallas pequeñas */
+  }
 }

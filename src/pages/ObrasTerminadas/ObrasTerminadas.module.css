@@ -1,10 +1,7 @@
-/* ObrasTerminadas.module.css */
-
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .title {
@@ -14,7 +11,7 @@
   align-items: center;
   text-decoration: overline;
   text-transform: uppercase;
-  padding: 20px;
+  padding: 10px; /* Ajuste del relleno */
   margin-top: 5%;
   letter-spacing: 2px;
 }
@@ -23,8 +20,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 0 8%;
+  gap: 10px; /* Ajuste del espacio entre elementos */
+  padding: 0 2%; /* Ajuste del relleno */
   margin: 0 auto;
 }
 
@@ -35,10 +32,25 @@
 .btnVolver {
   display: flex;
   align-items: center;
-  margin-top: 20px; /* Add space between Ver todas las obras button and Volver button */
+  margin-top: 10px; /* Ajuste del margen superior */
 }
 
 .polyfilmbtn {
   display: flex;
   align-items: center;
+}
+
+/* Estilos para dispositivos más pequeños */
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 24px; /* Ajuste del tamaño de la fuente */
+  }
+
+  .obrasTerminadasContainer {
+    padding: 0 5%; /* Ajuste del relleno */
+  }
+
+  .btnVolver {
+    margin-top: 5px; /* Ajuste del margen superior */
+  }
 }
