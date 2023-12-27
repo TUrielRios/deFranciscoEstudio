@@ -1,3 +1,6 @@
-h1{
+.title{
+    margin-top: 15vh;
     color: white;
+    text-align: center;
+    text-decoration: overline;
 }

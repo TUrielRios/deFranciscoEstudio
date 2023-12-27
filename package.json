@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "axios": "^1.6.2",
+    "cloudinary-react": "^1.8.1",
     "firebase": "^10.7.1",
     "fortawesome": "^0.0.1-security",
     "leaflet": "^1.7.1",

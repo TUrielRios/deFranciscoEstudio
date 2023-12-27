@@ -1,11 +1,16 @@
-import React from "react";
-//import styles from './Admin.module.css'
+import React from 'react';
 
+import Uploader from "../../components/Form/Form";
+
+import styles from './Admin.module.css';
 
 const Admin = () => {
+
     return(
-        <div>
-            <h1>hola soy el admin</h1>
+        <div className={styles.container}>
+        <h1 className={styles.title}>Panel de administración</h1>
+        <Uploader />
+  
         </div>
     )
 }
