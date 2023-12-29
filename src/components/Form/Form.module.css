@@ -73,4 +73,6 @@
     background-color: #fff;
     color: #333;
   }
-  
+  .publicBtn{
+    cursor: pointer;
+  }

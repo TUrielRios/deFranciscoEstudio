@@ -76,6 +76,11 @@ const Form = () => {
       setImagesSelected([]);
       setUploadedImageUrls([]);
 
+          // Recargar la página después de un breve retraso (puedes ajustar el tiempo según tus necesidades)
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000); // 2000 milisegundos = 2 segundos
+
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
     }
@@ -114,6 +119,7 @@ const Form = () => {
             onChange={handleChange}
             className={styles.selectField} // Aplica la clase de estilo aquí
           >
+            <option value="">-</option>
             <option value="En Construcción">En Construcción</option>
             <option value="Terminado">Terminado</option>
           </select>
@@ -147,7 +153,7 @@ const Form = () => {
           </div>
         )}
 
-        <button type="submit">Publicar</button>
+        <button className={styles.publicBtn} type="submit">Publicar</button>
         {showAlert && (
           <div className={styles.alert}>
             <p>¡Formulario enviado correctamente!</p>
