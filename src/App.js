@@ -10,6 +10,8 @@ import Muralismos from './pages/Muralismos/Muralismos';
 import ObrasEnConstruccion from './pages/ObrasEnConstruccion/ObrasEnConstruccion';
 import Admin from './pages/Admin/Admin';
 
+import ContactoPage from './pages/ContactoPage/ContactoPage';
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
           <Route exact path="/arquitectura/obras/:id" element={<Detail />} />
           <Route exact path="/muralismo" element={<Muralismos />} />
           <Route exact path="/admin" element={<Admin />} />
+          <Route exact path="/contacto" element={<ContactoPage/>} />
 
       </Routes>
       </div>

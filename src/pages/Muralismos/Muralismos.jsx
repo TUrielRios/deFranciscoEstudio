@@ -24,37 +24,39 @@ const Muralismos = () => {
   }
 
   return (
-    <>
+      <>
         <div className={styles.muralismosContainer}>
-
-            <p className={styles.title}>
-                Murales <br />
-                de Francisco
-            </p>
-            <div className={styles.socialIcons}>
-                <a href="https://www.instagram.com/muralesdefrancisco/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            </div>
-
-            <div className={styles.muralesList}>
-                {murales.map((mural) => (
-                <div key={mural.id} className={styles.muralItem}>
-                    <h2 className={styles.muralT}>{mural.nombre}</h2>
-                    <div className={styles.imagenContainer}>
-                    <img src={mural.imagenes[0]} alt={`Imagen de ${mural.nombre}`} className={styles.imagen} />
-                    </div>
-                </div>
-                ))}
-            </div>
-        </div>
         <Link className={styles.linkToTop} to="/">
-        <button className={styles.btnVolver}>
+          <button className={styles.btnVolver}>
             <FaArrowLeft />
-            </button>
-      </Link>
+          </button>
+        </Link>
+          <p className={styles.title}>
+            Murales <br />
+            de Francisco
+          </p>
+          <div className={styles.socialIcons}>
+            <a href="https://www.instagram.com/muralesdefrancisco/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
+          </div>
+          <div className={styles.muralesList}>
+            {murales.map((mural) => (
+              <div key={mural.id} className={styles.muralItem}>
+                <h2 className={styles.muralT}>{mural.nombre}</h2>
+                <div className={styles.imagenContainer}>
+                  <img src={mural.imagenes[0]} alt={`Imagen de ${mural.nombre}`} className={styles.imagen} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className={styles.footer}>
-        <Footer />
-        </div>    
-    </>
+          <Footer />
+        </div>
+      </>
+
 
   );
 };

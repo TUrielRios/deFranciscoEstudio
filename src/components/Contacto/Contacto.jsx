@@ -34,7 +34,7 @@ const Contacto = () => {
 
     return (
         <animated.div id="contacto" className={`${styles.contactoContainer} ${styles.animated}`} style={mainAnimation} ref={ref}>
-        <h1>¡Contactanos!</h1>
+        <h1 className={styles.titleC}>¡Contactanos!</h1>
         <div className={styles.mapContainer}>
             <MapContainer center={position} zoom={15} style={{ width: '100%', height: '400px' }}>
             <TileLayer

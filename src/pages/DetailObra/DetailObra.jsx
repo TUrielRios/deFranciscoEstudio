@@ -48,7 +48,7 @@ const Detail = () => {
   };
 
   return (
-    <>
+    <div className={styles.detailMainContainer}>
       <div className={styles.detailContainer}>
         {/* Add more details here as needed */}
         <Slider {...sliderSettings} className={styles.slider}>
@@ -76,7 +76,7 @@ const Detail = () => {
       <div className={styles.footer}>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

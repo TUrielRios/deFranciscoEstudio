@@ -22,7 +22,7 @@ const ObrasEnConstruccion = () => {
 
     return (
         <>
-            <div>
+            <div className={styles.container}>
             <h2 className={styles.title}>Obras en Construcción</h2>
             {obrasCargadas ? (
                 <div className={styles.obrasEnConstruccionContainer}>

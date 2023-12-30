@@ -25,13 +25,16 @@ const ObrasTerminadas = () => {
             <ObraCard key={obra.id} obra={obra} />
             ))}
         </div>
+        <div className={styles.btnContainer}>
         <Link to="/arquitectura/copia-de-polyfilm" className={styles.link}>
             <button className={styles.polyfilmbtn}>Ver todas las obras</button>
         </Link>
         <Link className={styles.link} to="/arquitectura/">
             <button className={styles.btnVolver}>Volver</button>
             </Link>
-        <div className={styles.container}>
+        </div>
+
+        <div className={styles.footerContainerOT}>
         <Footer />
         </div>           
     </div>

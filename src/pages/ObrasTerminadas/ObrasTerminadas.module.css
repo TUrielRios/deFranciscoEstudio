@@ -1,7 +1,21 @@
-.container {
+.obrasTerminadasContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 10px; /* Ajuste del espacio entre elementos */
+  padding: 0 2%; /* Ajuste del relleno */
+  margin: 0 auto;
+  min-height: calc(75vh - 150px); /* Resta el espacio del pie de página */
+}
+
+.footerContainerOT {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 150px;
+  margin: 0 auto;
+  width: 73%;
 }
 
 .title {
@@ -9,35 +23,68 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: overline;
   text-transform: uppercase;
-  padding: 10px; /* Ajuste del relleno */
+  padding: 10px;
   margin-top: 5%;
   letter-spacing: 2px;
+  position: relative;
 }
 
-.obrasTerminadasContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px; /* Ajuste del espacio entre elementos */
-  padding: 0 2%; /* Ajuste del relleno */
-  margin: 0 auto;
+.title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 2px; /* Grosor de la línea */
+  background-color: rgb(203, 203, 203); /* Color de la línea */
+  margin-top: 5px; /* Ajusta la separación vertical de la línea */
 }
+
+
 
 .link {
   text-decoration: none;
 }
 
-.btnVolver {
+.btnContainer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+/* Estilos base para los botones */
+.button {
   display: flex;
   align-items: center;
-  margin-top: 10px; /* Ajuste del margen superior */
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Estilos específicos para cada botón */
 .polyfilmbtn {
-  display: flex;
-  align-items: center;
+  border-color: #000;
+}
+
+.btnVolver {
+  border-color: #000;
+  margin-top: 10px;
+}
+
+/* Efecto de hover para los botones */
+.button:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 /* Estilos para dispositivos más pequeños */

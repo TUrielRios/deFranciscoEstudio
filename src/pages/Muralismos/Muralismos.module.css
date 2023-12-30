@@ -62,19 +62,21 @@
   text-decoration: none;
 }
 
-.btnVolver {
-  display: flex;
-  align-items: center;
-  margin-top: 0 auto;
-}
-
 .linkToTop {
   position: absolute;
-  top: 10%; /* Ajuste de la posición para dispositivos más pequeños */
-  right: 5%; /* Ajuste de la posición para dispositivos más pequeños */
-  z-index: 1000;
+  top: 19%;
+  right: 20%;
+  z-index: 999; /* Ajusta según sea necesario para que el botón esté encima de otros elementos */
 }
 
+.btnVolver {
+  color: whitesmoke;
+  background-color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
 .footer {
   display: flex;
   justify-content: center;
@@ -90,7 +92,12 @@
     font-size: 28px;
     width: 90%;
   }
-
+  .linkToTop {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    z-index: 999; /* Ajusta según sea necesario para que el botón esté encima de otros elementos */
+  }
   .socialIcons a {
     font-size: 30px;
   }

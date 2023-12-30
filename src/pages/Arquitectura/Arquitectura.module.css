@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 5%;
+  min-height: calc(85vh - 150px); /* Resta el espacio del pie de página */
 }
 
 .locationContainer {
@@ -48,8 +49,9 @@
   display: flex;
   justify-content: center;
   align-items: flex-end; /* Alinea el contenido en la parte inferior */
-  height: 30vh; /* Ocupa el 100% de la altura del viewport */
+  height: 150px; /* Ocupa el 100% de la altura del viewport */
   margin-top: auto; /* Empuja el contenido hacia abajo */
+
 }
 
 /* Estilos para pantallas pequeñas */
