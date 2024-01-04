@@ -15,7 +15,7 @@
   align-items: flex-end;
   height: 150px;
   margin: 0 auto;
-  width: 73%;
+  width: 100%;
 }
 
 .title {
@@ -76,12 +76,14 @@
 .polyfilmbtn {
   display: flex;
   align-items: center;
-  margin-top: 2vh; /* Add space between Ver todas las obras button and Volver button */
+  margin-top: 5vh; /* Add space between Ver todas las obras button and Volver button */
   background-color: transparent;
   transition: transform 0.3s ease; /* Agrega una transición suave para el efecto hover */
   font-size: 20px;
   text-transform: lowercase;
   letter-spacing: 2px;
+
+  margin-bottom: 0;
 }
 
 .polyfilmbtn:hover {
@@ -92,12 +94,12 @@
 .btnVolver {
   display: flex;
   align-items: center;
-  margin-top: 2vh; /* Add space between Ver todas las obras button and Volver button */
   background-color: transparent;
   transition: transform 0.3s ease; /* Agrega una transición suave para el efecto hover */
   font-size: 20px;
   text-transform: lowercase;
   letter-spacing: 2px;
+  margin-bottom: 0;
 }
 
 .btnVolver:hover {

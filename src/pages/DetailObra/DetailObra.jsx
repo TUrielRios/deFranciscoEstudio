@@ -37,7 +37,7 @@ const Detail = () => {
     return <div className={styles.error}>Obra no encontrada</div>;
   }
 
-  const { nombre, año, lugar, imagenes, finalidades, superficie, estado } = obra;
+  const { nombre, año, lugar, imagenes, finalidades, superficie, estado, metrosSemicubiertos } = obra;
 
   const sliderSettings = {
     dots: true,
@@ -63,7 +63,7 @@ const Detail = () => {
           <p>{año}</p>
           <p>{lugar}</p>
           <p>{finalidades}</p>
-          <p>{superficie}</p>
+          <p>{superficie} m²</p>
           <Link className={styles.link} to={estado === 'Terminado' ? "/arquitectura/obras-terminadas" : "/arquitectura/obras-en-construcción"}>
             <button className={styles.btnVolver}>
               <FaArrowLeft />

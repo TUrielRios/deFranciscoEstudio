@@ -96,7 +96,7 @@
 
 .empleadoItem img {
   width: 100%; /* Hace que la imagen ocupe el 100% del ancho de la tarjeta */
-  height: 35vh;
+  height: auto;
   border-radius: 50%;
   margin-bottom: 10px;
 }
