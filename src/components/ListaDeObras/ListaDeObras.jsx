@@ -16,6 +16,7 @@ const ListaDeObras = () => {
   const [editedName, setEditedName] = useState('');
   const [editedYear, setEditedYear] = useState('');
   const [editedSuperf, setEditedSuperf] = useState('');
+  const [editedMetrosS, setEditedMetrosS] = useState('');
   const [editedFinalidades, setEditedFinalidades] = useState('');
   const [editedPlace, setEditedPlace] = useState('');
   const [editedEstado, setEditedEstado] = useState('');
@@ -44,6 +45,7 @@ const ListaDeObras = () => {
     setEditedName(obra.nombre);
     setEditedYear(obra.año);
     setEditedSuperf(obra.superficie);
+    setEditedMetrosS(obra.metrosSemicubiertos)
     setEditedFinalidades(obra.finalidades);
     setEditedPlace(obra.lugar);
     setEditedEstado(obra.estado);
@@ -86,6 +88,7 @@ const ListaDeObras = () => {
           nombre: editedName,
           año: editedYear,
           superficie: editedSuperf,
+          metrosSemicubiertos: editedMetrosS,
           finalidades: editedFinalidades,
           lugar: editedPlace,
           estado: editedEstado,
@@ -151,6 +154,13 @@ const ListaDeObras = () => {
                     onChange={(e) => setEditedSuperf(e.target.value)}
                     className={styles.editInput}
                   />
+                                                      <input
+                    type="text"
+                    placeholder='metros semicubiertos'
+                    value={editedMetrosS}
+                    onChange={(e) => setEditedMetrosS(e.target.value)}
+                    className={styles.editInput}
+                  />
                                     <input
                     type="text"
                     placeholder='estado'
@@ -178,7 +188,12 @@ const ListaDeObras = () => {
                   <p>{obra.año}</p>
                     <p>{obra.lugar}</p>
                     <p>{obra.finalidades}</p>
-                    <p>{obra.superficie}</p>
+                    <p>{obra.superficie} m² cubiertos</p>
+                      {obra.metrosSemicubiertos ? 
+                        <p>{obra.metrosSemicubiertos} m² semicubiertos</p>
+                      :
+                        <p>{obra.metrosSemicubiertos}</p>
+                      }
                     <p>{obra.estado}</p>
                   <button onClick={() => handleEditClick(obra)} className={styles.editButton}>
                     Editar
@@ -200,70 +215,89 @@ const ListaDeObras = () => {
             <li key={obra.id} className={styles['obras-list-item']}>
               {editingObra === obra ? (
                 <>
-                  <input
-                    type="text"
-                    value={editedName}
-                    onChange={(e) => setEditedName(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                      <input
-                    type="text"
-                    value={editedYear}
-                    onChange={(e) => setEditedYear(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                    <input
-                    type="text"
-                    value={editedPlace}
-                    onChange={(e) => setEditedPlace(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                    <input
-                    type="text"
-                    value={editedFinalidades}
-                    onChange={(e) => setEditedFinalidades(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                    <input
-                    type="text"
-                    value={editedSuperf}
-                    onChange={(e) => setEditedSuperf(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                    <input
-                    type="text"
-                    value={editedEstado}
-                    onChange={(e) => setEditedEstado(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                                    <input
-                  type="file"
-                  multiple
-                  onChange={handleImagesChange}
+                <input
+                  type="text"
+                  placeholder='nombre'
+                  value={editedName}
+                  onChange={(e) => setEditedName(e.target.value)}
                   className={styles.editInput}
                 />
+                  <input
+                  type="text"
+                  placeholder='año'
+                  value={editedYear}
+                  onChange={(e) => setEditedYear(e.target.value)}
+                  className={styles.editInput}
+                />
+                                  <input
+                  type="text"
+                  placeholder='lugar'
+                  value={editedPlace}
+                  onChange={(e) => setEditedPlace(e.target.value)}
+                  className={styles.editInput}
+                />
+                                  <input
+                  type="text"
+                  placeholder='finalidades'
+                  value={editedFinalidades}
+                  onChange={(e) => setEditedFinalidades(e.target.value)}
+                  className={styles.editInput}
+                />
+                                  <input
+                  type="text"
+                  placeholder='superficie'
+                  value={editedSuperf}
+                  onChange={(e) => setEditedSuperf(e.target.value)}
+                  className={styles.editInput}
+                />
+                                                    <input
+                  type="text"
+                  placeholder='metros semicubiertos'
+                  value={editedMetrosS}
+                  onChange={(e) => setEditedMetrosS(e.target.value)}
+                  className={styles.editInput}
+                />
+                                  <input
+                  type="text"
+                  placeholder='estado'
+                  value={editedEstado}
+                  onChange={(e) => setEditedEstado(e.target.value)}
+                  className={styles.editInput}
+                />
+                                <input
+                type="file"
+                multiple
+                onChange={handleImagesChange}
+                className={styles.editInput}
+              />
 
 
-                  <button onClick={handleSaveClick} className={styles.saveButton}>
-                    Guardar
-                  </button>
-                </>
-              ) : (
-                <>
-                  <h3>{obra.nombre}</h3>
-                  <img src={obra.imagenes[0]} alt="" className={styles.imagenes} />
-                    <p>{obra.año}</p>
-                    <p>{obra.lugar}</p>
-                    <p>{obra.finalidades}</p>
-                    <p>{obra.superficie}</p>
-                    <p>{obra.estado}</p>
-                  <button onClick={() => handleEditClick(obra)} className={styles.editButton}>
-                    Editar
-                  </button>
-                  <button onClick={() => handleDeleteClick(obra.id)} className={styles.deleteButton}>
-                    X
-                  </button>
-                </>
+
+                <button onClick={handleSaveClick} className={styles.saveButton}>
+                  Guardar
+                </button>
+              </>
+            ) : (
+              <>
+                <h3>{obra.nombre}</h3>
+                <img src={obra.imagenes[0]} alt="" className={styles.imagenes} />
+                <p>{obra.año}</p>
+                  <p>{obra.lugar}</p>
+                  <p>{obra.finalidades}</p>
+                  <p>{obra.superficie} m² cubiertos</p>
+                    {obra.metrosSemicubiertos ? 
+                      <p>{obra.metrosSemicubiertos} m² semicubiertos</p>
+                    :
+                      <p>{obra.metrosSemicubiertos}</p>
+                    }
+                  <p>{obra.estado}</p>
+                <button onClick={() => handleEditClick(obra)} className={styles.editButton}>
+                  Editar
+                </button>
+                <button onClick={() => handleDeleteClick(obra.id)} className={styles.deleteButton}>
+                  X
+                </button>
+              </>
               )}
             </li>
           ))}

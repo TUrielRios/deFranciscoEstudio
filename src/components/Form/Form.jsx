@@ -18,6 +18,7 @@ const Form = () => {
     lugar: '',
     finalidades: '',
     superficie: '',
+    metrosSemicubiertos: '',
     estado: 'En Construcción', // Valor predeterminado
   });
 
@@ -71,6 +72,7 @@ const Form = () => {
         lugar: '',
         finalidades: '',
         superficie: '',
+        metrosSemicubiertos: '',
         estado: 'En Construcción', // Valor predeterminado
       });
       setImagesSelected([]);
@@ -110,6 +112,10 @@ const Form = () => {
         <label>
           Superficie:
           <input type="text" name="superficie" value={values.superficie} onChange={handleChange} />
+        </label>
+        <label>
+          Metros semicubiertos:
+          <input type="text" name="metrosSemicubiertos" value={values.metrosSemicubiertos} onChange={handleChange} />
         </label>
         <label>
           Estado:

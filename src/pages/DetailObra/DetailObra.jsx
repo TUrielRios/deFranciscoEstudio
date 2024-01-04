@@ -63,7 +63,12 @@ const Detail = () => {
           <p>{año}</p>
           <p>{lugar}</p>
           <p>{finalidades}</p>
-          <p>{superficie} m²</p>
+          <p>{superficie} m² cubiertos</p>
+          {metrosSemicubiertos ? 
+            <p>{metrosSemicubiertos} m² semicubiertos</p>
+          :
+            <p>{metrosSemicubiertos}</p>
+          }
           <Link className={styles.link} to={estado === 'Terminado' ? "/arquitectura/obras-terminadas" : "/arquitectura/obras-en-construcción"}>
             <button className={styles.btnVolver}>
               <FaArrowLeft />

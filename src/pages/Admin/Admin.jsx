@@ -8,9 +8,12 @@ import ListaDeObras from '../../components/ListaDeObras/ListaDeObras';
 const Admin = () => {
 
     return(
-        <div className={styles.container}>
+        <div className={styles.mainContainer}>
         <h1 className={styles.title}>Panel de administración</h1>
-        <Uploader />
+        <div className={styles.formCreateContainer}>
+            <Uploader />
+        </div>
+
         <section className={styles.listaDeObras}>
             <ListaDeObras />
         </section>
