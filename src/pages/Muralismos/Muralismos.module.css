@@ -3,7 +3,9 @@
   padding: 20px;
   background-color: whitesmoke;
   margin: 5% 20%; /* Ajuste del margen para dispositivos más pequeños */
+  position: relative; /* Añadir position: relative al contenedor principal */
 }
+
 
 .title {
   font-size: 36px;
@@ -64,8 +66,8 @@
 
 .linkToTop {
   position: absolute;
-  top: 19%;
-  right: 20%;
+  top: 10px; /* Ajusta según sea necesario para la posición vertical */
+  right: 10px; /* Ajusta según sea necesario para la posición horizontal */
   z-index: 999; /* Ajusta según sea necesario para que el botón esté encima de otros elementos */
 }
 
@@ -92,12 +94,7 @@
     font-size: 28px;
     width: 90%;
   }
-  .linkToTop {
-    position: absolute;
-    top: 30%;
-    right: 5%;
-    z-index: 999; /* Ajusta según sea necesario para que el botón esté encima de otros elementos */
-  }
+
   .socialIcons a {
     font-size: 30px;
   }

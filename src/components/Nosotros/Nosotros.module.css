@@ -66,17 +66,39 @@
   flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
   justify-content: center;
   margin-top: 20px;
+  text-align: center;
+}
+
+.nombreCompleto{
+  font-weight: bold;
+  font-size: 18px;
+
+}
+.cargo {
+  font-size: 16px;
+  color: rgb(36, 36, 36);
+}
+.cedulaA{
+  font-size: 14px;
+  color: rgb(49, 49, 49);
+}
+.cedulaB{
+  font-size: 14px;
+  color: rgb(59, 59, 59);
 }
 
 .empleadoItem {
-  width: 250px; /* Ancho de cada tarjeta de empleado */
+  width: 18vw; /* Ancho de cada tarjeta de empleado */
   margin: 3%; /* Espaciado entre las tarjetas */
   text-align: center;
+
 }
 
 .empleadoItem img {
   width: 100%; /* Hace que la imagen ocupe el 100% del ancho de la tarjeta */
+  height: 35vh;
   border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 /* Agrega estas clases para las animaciones */

@@ -74,13 +74,13 @@ if (error) {
           {employees && employees.length > 0 && trailAnimation.map((props, index) => (
             <animated.article key={employees[index].id} className={`${styles.empleadoItem}`} style={props}>
               <img src={employees[index].foto} alt="Empleado" />
-              <span>{employees[index].nombre_completo}</span>
+              <span className={styles.nombreCompleto}>{employees[index].nombre_completo}</span>
               <br />
-              <span>{employees[index].cargo}</span>
+              <span className={styles.cargo}>{employees[index].cargo}</span>
               <br />
-              {employees[index].cedula_a && <span>Cédula A: {employees[index].cedula_a}</span>}
+              {employees[index].cedula_a && <span className={styles.cedulaA}>Cédula A: {employees[index].cedula_a}</span>}
               <br />
-              {employees[index].cedula_b && <span>Cédula B: {employees[index].cedula_b}</span>}
+              {employees[index].cedula_b && <span className={styles.cedulaB}> Cédula B: {employees[index].cedula_b}</span>}
             </animated.article>
           ))}
         </section>

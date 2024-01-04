@@ -36,7 +36,17 @@
 .btnVolver {
   display: flex;
   align-items: center;
-  margin-top: 0 auto;
+  margin-bottom: 3vh; /* Add space between Ver todas las obras button and Volver button */
+  background-color: transparent;
+  transition: transform 0.3s ease; /* Agrega una transición suave para el efecto hover */
+  font-size: 20px;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+}
+
+.btnVolver:hover {
+  transform: scale(1.3); /* Escala el botón al 110% del tamaño original al hacer hover */
+  background-color: transparent;
 }
 
 /* Estilos adicionales para hacerlo responsive */
