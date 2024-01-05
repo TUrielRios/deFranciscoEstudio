@@ -9,15 +9,27 @@
 }
 
 .title {
-    color: rgb(203, 203, 203);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: overline;
-    text-transform: uppercase;
-    padding: 20px;
-    margin-top: 5%;
-    letter-spacing: 2px;
+  color: rgb(203, 203, 203);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: 5%;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 2px; /* Grosor de la línea */
+  background-color: rgb(203, 203, 203); /* Color de la línea */
+  margin-top: 3px; /* Ajusta la separación vertical de la línea */
 }
 
 .obrasEnConstruccionContainer {

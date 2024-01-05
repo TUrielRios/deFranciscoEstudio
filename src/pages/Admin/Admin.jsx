@@ -4,6 +4,8 @@ import Uploader from "../../components/Form/Form";
 
 import styles from './Admin.module.css';
 import ListaDeObras from '../../components/ListaDeObras/ListaDeObras';
+import ListaDeEmpleados from '../../adminComponents/ListaDeEmpleados/ListaDeEmpleados';
+import FormEmpleados from '../../adminComponents/FormEmpleados/FormEmpleados';
 
 const Admin = () => {
 
@@ -16,6 +18,12 @@ const Admin = () => {
 
         <section className={styles.listaDeObras}>
             <ListaDeObras />
+        </section>
+        <section className={styles.listaDeEmpleados}>
+            <ListaDeEmpleados />
+        </section>
+        <section>
+            <FormEmpleados />
         </section>
   
         </div>

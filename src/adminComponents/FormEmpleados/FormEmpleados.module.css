@@ -1,0 +1,63 @@
+/* frontend/components/EmployeeForm.module.css */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    justify-content: center;
+
+  }
+  
+  .form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .form input {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .imagePreview {
+    margin-top: 20px;
+  }
+  
+  .previewImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form button {
+    background-color: #0074cc;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form button:hover {
+    background-color: #005496;
+  }
+  
