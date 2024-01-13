@@ -8,7 +8,6 @@ import { useSpring, animated } from 'react-spring';
 import logoMap from '../../imagenes/logo.png'
 import L from 'leaflet';
 import { useState } from 'react';
-import emailjs from 'emailjs-com';
 
 const Contacto = () => {
 
@@ -32,41 +31,41 @@ const Contacto = () => {
     const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
     const [mensaje, setMensaje] = useState('');
+    const [enviado, setEnviado] = useState(false); // Nuevo estado para rastrear si el mensaje se envió
+
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
   
-      // Configuración de Email.js
-      const serviceId = 'service_hzsmy39';
-      const templateId = 'template_xr5aza2';
-      const userId = 'JvGtV5AT4cQgjyV0b';
-  
-      // Datos del formulario
-      const formData = {
-        nombre: e.target.nombre.value,
-        email: e.target.email.value,
-        mensaje: e.target.mensaje.value,
-      };
-  
-      // Usar una dirección de correo diferente como destinatario
-      const destinatario = 'riostiziano6@gmail.com';
-  
-      // Envío del correo electrónico
-      emailjs
-        .send(serviceId, templateId, { ...formData, destinatario }, userId)
-        .then((response) => {
-          console.log('Correo electrónico enviado con éxito:', response);
-          alert('Correo electrónico enviado correctamente');
-  
-          // Reinicia los valores del formulario
-          setNombre('');
-          setEmail('');
-          setMensaje('');
-        })
-        .catch((error) => {
-          console.error('Error al enviar el correo electrónico:', error);
-          alert('Error al enviar el correo electrónico');
+      try {
+        const response = await fetch('https://estudio-backend-ti3p.vercel.app/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ nombre, email, mensaje }),
         });
+  
+        if (response.ok) {
+          console.log('Mensaje enviado con éxito');
+          // Puedes hacer algo aquí, como mostrar un mensaje de éxito al usuario.
+          setEnviado(true)
+
+                  // Restablecer los valores de los campos después de enviar el mensaje
+        setNombre('');
+        setEmail('');
+        setMensaje('');
+
+        // Ocultar el mensaje de éxito después de unos segundos (opcional)
+        setTimeout(() => setEnviado(false), 3000);
+        } else {
+          console.error('Error al enviar el mensaje');
+          // Puedes hacer algo aquí, como mostrar un mensaje de error al usuario.
+        }
+      } catch (error) {
+        console.error('Error de red:', error);
+        // Puedes hacer algo aquí, como mostrar un mensaje de error al usuario.
+      }
     };
 
     return (
@@ -96,18 +95,24 @@ const Contacto = () => {
         <form onSubmit={handleSubmit}>
         <label>
           Nombre:
-          <input type="text" name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+          <input type="text" name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
         </label>
         <label>
           Correo electrónico:
-          <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </label>
         <label>
           Mensaje:
-          <textarea name="mensaje" value={mensaje} onChange={(e) => setMensaje(e.target.value)} />
+          <textarea name="mensaje" value={mensaje} onChange={(e) => setMensaje(e.target.value)} required />
         </label>
         <button type="submit">Enviar</button>
       </form>
+      {/* Mostrar mensaje de éxito si el correo electrónico se envió */}
+      {enviado && (
+                  <span style={{ display:"flex", justifyContent: "center", alignItems: "center", color: 'green', marginTop: '10px' }}>
+          ¡Mensaje enviado con éxito!
+        </span>
+      )}
 
             </div>
         </animated.div>
