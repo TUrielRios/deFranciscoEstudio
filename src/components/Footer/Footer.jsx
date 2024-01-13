@@ -5,9 +5,11 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../../imagenes/fondoOriginal.png'
 
 const Footer = () => {
+  const emailAddress = 'defranciscoestudio@gmail.com';
+
   return (
     <div className={styles.footerContainer}>
-              <div className={styles.logoContainer}>
+      <div className={styles.logoContainer}>
         <img src={logo} alt="Logo de la empresa" />
       </div>
       <div className={styles.contactInfo}>
@@ -17,14 +19,14 @@ const Footer = () => {
         </div>
         <div>
           <FaEnvelope />
-          <p>defranciscoestudio@gmail.com</p>
+          {/* Agrega el enlace mailto al correo electrónico */}
+          <a href={`mailto:${emailAddress}`}>{emailAddress}</a>
         </div>
         <div>
           <FaMapMarkerAlt />
           <p>Buenos Aires, Argentina</p>
         </div>
       </div>
-
     </div>
   );
 };

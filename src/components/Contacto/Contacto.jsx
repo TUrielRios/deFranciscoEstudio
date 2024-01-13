@@ -7,6 +7,8 @@ import { useInView } from 'react-intersection-observer';
 import { useSpring, animated } from 'react-spring';
 import logoMap from '../../imagenes/logo.png'
 import L from 'leaflet';
+import { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const Contacto = () => {
 
@@ -27,9 +29,44 @@ const Contacto = () => {
 
     const position = [-34.55650338614781, -58.445041305230696];
 
+    const [nombre, setNombre] = useState('');
+    const [email, setEmail] = useState('');
+    const [mensaje, setMensaje] = useState('');
+  
     const handleSubmit = (e) => {
-        e.preventDefault();
-        // Lógica para enviar el formulario, puedes implementarla según tus necesidades
+      e.preventDefault();
+  
+      // Configuración de Email.js
+      const serviceId = 'service_hzsmy39';
+      const templateId = 'template_xr5aza2';
+      const userId = 'JvGtV5AT4cQgjyV0b';
+  
+      // Datos del formulario
+      const formData = {
+        nombre: e.target.nombre.value,
+        email: e.target.email.value,
+        mensaje: e.target.mensaje.value,
+      };
+  
+      // Usar una dirección de correo diferente como destinatario
+      const destinatario = 'riostiziano6@gmail.com';
+  
+      // Envío del correo electrónico
+      emailjs
+        .send(serviceId, templateId, { ...formData, destinatario }, userId)
+        .then((response) => {
+          console.log('Correo electrónico enviado con éxito:', response);
+          alert('Correo electrónico enviado correctamente');
+  
+          // Reinicia los valores del formulario
+          setNombre('');
+          setEmail('');
+          setMensaje('');
+        })
+        .catch((error) => {
+          console.error('Error al enviar el correo electrónico:', error);
+          alert('Error al enviar el correo electrónico');
+        });
     };
 
     return (
@@ -56,21 +93,22 @@ const Contacto = () => {
             </p>
         </div>
         <div className={styles.formContainer}>
-            <form onSubmit={handleSubmit}>
-                <label>
-                Nombre:
-                <input type="text" name="nombre" />
-                </label>
-                <label>
-                Correo electrónico:
-                <input type="email" name="email" />
-                </label>
-                <label>
-                Mensaje:
-                <textarea name="mensaje" />
-                </label>
-                <button type="submit">Enviar</button>
-            </form>
+        <form onSubmit={handleSubmit}>
+        <label>
+          Nombre:
+          <input type="text" name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+        </label>
+        <label>
+          Correo electrónico:
+          <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </label>
+        <label>
+          Mensaje:
+          <textarea name="mensaje" value={mensaje} onChange={(e) => setMensaje(e.target.value)} />
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+
             </div>
         </animated.div>
     );

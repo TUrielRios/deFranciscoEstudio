@@ -2,17 +2,17 @@
 .footerContainer {
   background-color: #000000; /* Ajusta el color de fondo según tu diseño */
   color: #fff; /* Ajusta el color del texto según tu diseño */
-  padding: 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 73%;
-
 }
 
 .contactInfo {
   display: flex;
   gap: 20px;
+  
 }
 
 .contactInfo div {
@@ -23,6 +23,17 @@
 .contactInfo p {
   margin: 0;
   margin-left: 10px;
+}
+.contactInfo a {
+  margin: 0;
+  margin-left: 10px;
+  color: inherit; /* Utiliza el color del texto heredado */
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+  cursor: pointer;
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
 }
 
 .logoContainer {
