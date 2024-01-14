@@ -13,7 +13,7 @@ const Admin = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     let [isLoggedIn, setIsLoggedIn] = useState(false);
-
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
     
 
     const handlePasswordSubmit = async (e) => {
@@ -24,8 +24,6 @@ const Admin = () => {
     
             if (response.ok) {
                 const data = await response.json();
-                console.log('Data from API:', data);
-                console.log("password", data[0].password)
     
                 const contraseña = data[0].password;
     
@@ -37,6 +35,8 @@ const Admin = () => {
                 } else {
                     console.log('Contraseña incorrecta.');
                     setError('Contraseña incorrecta');
+                    alert('Contraseña incorrecta')
+                    setPassword('')
                 }
             } else {
                 console.error('Error de la solicitud:', response.status, response.statusText);
@@ -48,7 +48,22 @@ const Admin = () => {
         }
     };
     
-
+    const handleForgotPasswordSubmit = async () => {
+        try {
+          const response = await fetch('https://estudio-backend-ti3p.vercel.app/recover-pass', {
+            method: 'POST',
+          });
+    
+          if (response.ok) {
+            console.log('Correo electrónico de restablecimiento enviado con éxito');
+            alert("Correo de recuperación enviado con éxito")
+          } else {
+            console.error('Error al enviar el correo electrónico de restablecimiento');
+          }
+        } catch (error) {
+          console.error('Error al enviar el correo electrónico de restablecimiento', error);
+        }
+      };
 
 
     return(
@@ -72,20 +87,35 @@ const Admin = () => {
             
                 </div> 
                 :
-                <form onSubmit={handlePasswordSubmit}>
-            <label>
-                Contraseña:
-                <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                />
-            </label>
-            <button type="submit">Ingresar</button>
-            {error && <p>{error}</p>}
-            </form>
-                }
-        </div>
+                <div className={styles.mainFormContainer}>
+                {!showForgotPassword ? (
+                  <form onSubmit={handlePasswordSubmit} className={styles['form-container']}>
+                    <label htmlFor="password" className={styles['form-label']}>
+                      Contraseña:
+                      <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className={styles['form-input']}
+                      />
+                    </label>
+                    <button type="submit" className={styles['form-button']}>
+                      Ingresar
+                    </button>
+                    <p className={styles['forgot-password-link']} onClick={handleForgotPasswordSubmit}>
+                        Olvidé mi contraseña
+                    </p>
+                    {error && <p className={styles['form-error']}>{error}</p>}
+                  </form>
+                ) : (
+                    <p className={styles['back-to-login-link']} onClick={() => setShowForgotPassword(false)}>
+                        Volver al inicio de sesión
+                    </p>
+                )}
+              </div>
+                        }
+                </div>
         
     )
 }

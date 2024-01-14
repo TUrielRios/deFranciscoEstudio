@@ -61,4 +61,7 @@
     height: auto;
   }
   
+  .footer{
+    margin-top: 10vh;
+  }
 }

@@ -69,60 +69,59 @@ const ContactoPage = () => {
       }
     };
     return (
-        <div className={styles.mainContainer}>
-            <div className={styles.titlediv}>
-              <h1 className={styles.title}>¡Contactanos!</h1>
-            </div>
-
-            <animated.div id="contacto" className={`${styles.contactoContainer} ${styles.animated}`} style={mainAnimation} ref={ref}>
-              <div className={styles.mapContainer}>
+      <div className={styles.contactPageContainer}>
+          <animated.div id="contacto" className={`${styles.contactoContainer} ${styles.animated}`} style={mainAnimation} ref={ref}>
+            <h1 className={styles.titleC}>¡Contactanos!</h1>
+            <div className={styles.mapContainer}>
                 <MapContainer center={position} zoom={15} style={{ width: '100%', height: '400px' }}>
-                  <TileLayer
+                <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Marker position={position} icon={customIcon}>
+                />
+                <Marker position={position} icon={customIcon} >
+
                     <Popup>
-                      <div className={styles.popupContent}>
-                        <img src={logoMap} alt="Logo de ubicación" className={styles.popupLogo} />
-                        <p className={styles.popupText}>Estudio De Francisco</p>
-                      </div>
+                        <div className={styles.popupContent}>
+                            <img src={logoMap} alt="Logo de ubicación" className={styles.popupLogo} />
+                            <p className={styles.popupText}>Estudio De Francisco</p>
+                        </div>
                     </Popup>
-                  </Marker>
+                </Marker>
                 </MapContainer>
-                <p className={styles.address}>Dirección: Echeverría 1328, CABA, Argentina</p>
-              </div>
-
-              <div className={styles.formContainer}>
-                  <form onSubmit={handleSubmit}>
-                  <label>
-                    Nombre:
-                    <input type="text" name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required/>
-                  </label>
-                  <label>
-                    Correo electrónico:
-                    <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-                  </label>
-                  <label>
-                    Mensaje:
-                    <textarea name="mensaje" value={mensaje} onChange={(e) => setMensaje(e.target.value)} required/>
-                  </label>
-                  <button type="submit">Enviar</button>
-                </form>
-                {/* Mostrar mensaje de éxito si el correo electrónico se envió */}
-                {enviado && (
-                  <span style={{ display:"flex", justifyContent: "center", alignItems: "center", color: 'green', marginTop: '10px' }}>
-                    ¡Mensaje enviado con éxito!
-                  </span>
-                )}
-
-                      </div>
-            </animated.div>
-
-            <div className={styles.footerCC}>
-              <Footer />
+                <p className={styles.address}>
+                    Dirección: Echeverría 1328, CABA, Argentina
+                </p>
             </div>
-</div>
+            <div className={styles.formContainer}>
+            <form onSubmit={handleSubmit}>
+            <label>
+              Nombre:
+              <input type="text" name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+            </label>
+            <label>
+              Correo electrónico:
+              <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            </label>
+            <label>
+              Mensaje:
+              <textarea name="mensaje" value={mensaje} onChange={(e) => setMensaje(e.target.value)} required />
+            </label>
+            <button type="submit">Enviar</button>
+          </form>
+          {/* Mostrar mensaje de éxito si el correo electrónico se envió */}
+          {enviado && (
+                      <span style={{ display:"flex", justifyContent: "center", alignItems: "center", color: 'green', marginTop: '10px' }}>
+              ¡Mensaje enviado con éxito!
+            </span>
+          )}
+
+                </div>
+
+        </animated.div>
+        <div className={styles.footerContainerCP}>
+                  <Footer/>
+                </div>
+      </div>
 
     );
 };

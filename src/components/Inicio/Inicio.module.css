@@ -77,10 +77,3 @@
     width: 80%;
   }
 }
-
-/* Estilos para pantallas pequeñas */
-@media only screen and (max-width: 480px) {
-  .backgroundImage img {
-    width: 100%;
-  }
-}

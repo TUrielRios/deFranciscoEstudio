@@ -117,13 +117,18 @@
 @media only screen and (max-width: 768px) {
   .title {
     font-size: 24px; /* Ajuste del tamaño de la fuente */
+    margin-top: 10vh;
   }
 
   .obrasTerminadasContainer {
     padding: 0 5%; /* Ajuste del relleno */
+
   }
 
   .btnVolver {
     margin-top: 5px; /* Ajuste del margen superior */
+  }
+  .footerContainerOT{
+    margin-top: 10vh;
   }
 }

@@ -86,13 +86,16 @@
 }
 
 /* Estilos para pantallas pequeñas */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   .carruselContainer {
-    max-width: 95%; /* Ajustar el ancho del contenedor en pantallas pequeñas */
+    max-width: 100%; /* Ajustar el ancho del contenedor en pantallas pequeñas */
   }
+ .carruselContainer h1 {
+  font-size: 14px;
+ }
 
   .logoImageContainer {
-    width: 400%; /* Ajustar el ancho del contenedor en pantallas pequeñas */
+    width: 300%; /* Ajustar el ancho del contenedor en pantallas pequeñas */
   }
 
   .logoImageDuplicate {

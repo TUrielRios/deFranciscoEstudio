@@ -22,3 +22,102 @@
 .listaDeEmpleados{
     margin-top: 15vh;
 }
+
+/* Formulario */
+
+.mainFormContainer{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.form-container {
+    max-width: 30%;
+    margin: 0 auto;
+    padding: 2vh;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 1vh;
+    font-size: 16px;
+    color: #dbdbdb;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 1vh;
+
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-button {
+    background-color: #133014;
+    color: #fff;
+    padding: 2vh;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px;
+  }
+  
+  .form-error {
+    color: #ff0000;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .forgot-password-link,
+.back-to-login-link {
+  cursor: pointer;
+  color: #3498db;
+  margin-top: 10px;
+}
+
+.forgot-password-link:hover,
+.back-to-login-link:hover {
+  text-decoration: underline;
+  color: #2c3e50;
+}
+
+/* Estilos para pantallas inferiores o iguales a 768px */
+@media (max-width: 1024px) {
+.formCreateContainer{
+  margin-top: 40vh
+}
+}
+@media (max-width: 768px) {
+  .mainFormContainer {
+    height: auto;
+    padding: 15px; /* Agrega espacio alrededor del formulario en pantallas pequeñas */
+    margin-top: 15vh;
+  }
+  .formCreateContainer{
+    margin-top: 30vh
+  }
+
+  .form-container {
+    max-width: 70%; /* Utiliza todo el ancho disponible */
+  }
+
+  .form-input {
+    padding: 10px; /* Ajusta el espacio alrededor del input */
+  }
+
+  .form-button {
+    padding: 10px; /* Ajusta el espacio alrededor del botón */
+    margin: 10px; /* Ajusta el margen del botón */
+  }
+}

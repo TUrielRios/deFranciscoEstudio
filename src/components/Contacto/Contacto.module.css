@@ -101,13 +101,25 @@
     color: rgb(255, 255, 255);
   }
   
-  @media only screen and (max-width: 480px) {
-    .contactoContainer {
-      width: 90%; /* Ajustar el ancho del contenedor en pantallas pequeñas */
-      padding: 10px; /* Reducir el espacio de relleno en pantallas pequeñas */
-    }
-  
-    .contactoContainer h1 {
-      font-size: 20px; /* Reducir el tamaño de fuente en pantallas pequeñas */
-    }
+/* Estilos para pantallas inferiores o iguales a 768px */
+@media (max-width: 768px) {
+  .mapContainer,
+  .formContainer {
+    width: 100%;
+    margin: 0;
   }
+
+  .mapContainer {
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  .formContainer {
+    float: none;
+    margin-top: 20px;
+  }
+
+  .titleC {
+    font-size: 20px;
+  }
+}
