@@ -1,11 +1,7 @@
 // Nosotros.js
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-    fetchEmployeesStart,
-    fetchEmployeesSuccess,
-    fetchEmployeesFailure,
-} from '../../redux/features/empleadoSlice';
+import React from 'react';
+import { useSelector } from 'react-redux';
+
 import styles from './Nosotros.module.css'; // Asegúrate de tener un módulo de estilos para Nosotros
 import { useInView } from 'react-intersection-observer';
 import { useSpring, animated, useTrail } from 'react-spring';
@@ -16,8 +12,7 @@ import { useSpring, animated, useTrail } from 'react-spring';
 const Nosotros = () => {
 
     const [ref, inView] = useInView()    
-    const dispatch = useDispatch();
-    const { employees, loading, error } = useSelector((state) => state.employee);
+    const { employees } = useSelector((state) => state.employee);
 
   // Configuración de la animación principal
   const mainAnimation = useSpring({
@@ -34,31 +29,7 @@ const trailAnimation = useTrail(employees?.length || 0, {
   delay: 300, // Ajusta el tiempo de retraso entre cada letra
 });
 
-  useEffect(() => {
-    const apiUrl = 'https://estudio-backend-ti3p.vercel.app/empleados';
 
-  const fetchData = async () => {
-    dispatch(fetchEmployeesStart());
-
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        dispatch(fetchEmployeesSuccess(data));
-    } catch (error) {
-        dispatch(fetchEmployeesFailure(error.message));
-    }
-};
-
-fetchData();
-}, [dispatch]);
-
-if (loading) {
-    return <p>Aguarde un momento...</p>;
-}
-
-if (error) {
-    return <p>Error al cargar empleados: {error}</p>;
-}
 
 
   return (

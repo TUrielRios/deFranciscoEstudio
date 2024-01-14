@@ -71,6 +71,24 @@
   color: rgb(62, 62, 62);
 }
 
+.containerLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerLoading p {
+  font-size: 14px;
+}
+
+.containerLoading img {
+  height: auto;
+  width: 30vw;
+}
+
+
+
 /* Estilos para pantallas medianas */
 @media only screen and (max-width: 768px) {
   .backgroundImage img {

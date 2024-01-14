@@ -1,5 +1,5 @@
 // Inicio.js
-import React from 'react';
+import React, {useEffect} from 'react';
 import { FaArrowDown } from 'react-icons/fa';
 import styles from './Inicio.module.css';
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
@@ -8,11 +8,53 @@ import Nosotros from '../Nosotros/Nosotros';
 import Carrusel from '../Carrusel/Carrusel';
 import Contacto from '../Contacto/Contacto';
 import Footer from '../Footer/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    fetchEmployeesStart,
+    fetchEmployeesSuccess,
+    fetchEmployeesFailure,
+} from '../../redux/features/empleadoSlice';
+import logo from '../../imagenes/gif-loading.gif'
 
 const Inicio = () => {
+
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.employee);
+
+  useEffect(() => {
+    const apiUrl = 'https://estudio-backend-ti3p.vercel.app/empleados';
+
+    const fetchData = async () => {
+      dispatch(fetchEmployeesStart());
+
+      try {
+          const response = await fetch(apiUrl);
+          const data = await response.json();
+          console.log('Data:', data);  // Log the data
+          dispatch(fetchEmployeesSuccess(data));
+      } catch (error) {
+          console.error('Error:', error);  // Log the error
+          dispatch(fetchEmployeesFailure(error.message));
+      }
+  };
+
+  fetchData();
+  }, [dispatch]);
+
+if (error) {
+    return <p>Pequeño error, por favor recargue la página!{error}</p>;
+}
+
   return (
     <>
-        <div className={styles.inicioSection}>
+    <div className={styles.inicioSection}>
+      {loading ? (
+        <div className={styles.containerLoading}>
+          <img src={logo} alt="" />
+          <p>Aguarde un momento, por favor...</p>
+        </div>
+      ) : (
+        <>
           <div className={styles.backgroundImage}>
             {/* Coloca tu logo u otra imagen de fondo aquí */}
             <img src={fondo} alt="" />
@@ -28,17 +70,17 @@ const Inicio = () => {
             </div>
           </div>
           <Nosotros />
-          <Carrusel/>
-          <Contacto/>
-
+          <Carrusel />
+          <Contacto />
+  
           <div className={styles.footerContainerIn}>
-            <Footer/>
+            <Footer />
           </div>
-   
+        </>
+      )}
     </div>
-
-    
-    </>
+  </>
+  
 
     
   );
