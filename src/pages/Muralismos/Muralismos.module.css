@@ -88,7 +88,7 @@
 /* Estilos para dispositivos más pequeños */
 @media only screen and (max-width: 768px) {
   .muralismosContainer{
-    margin: 5% 5%; /* Ajuste del margen para dispositivos más pequeños */
+    margin: 10vh 5%; /* Ajuste del margen para dispositivos más pequeños */
   }
   .title {
     font-size: 28px;

@@ -13,6 +13,10 @@
     justify-content: center;
     align-items: center;
 }
+
+section{
+  margin: 5%;
+}
 .formCreateContainer{
     margin-top: 15vh;
 }
@@ -93,11 +97,7 @@
 }
 
 /* Estilos para pantallas inferiores o iguales a 768px */
-@media (max-width: 1024px) {
-.formCreateContainer{
-  margin-top: 40vh
-}
-}
+
 @media (max-width: 768px) {
   .mainFormContainer {
     height: auto;
@@ -105,7 +105,7 @@
     margin-top: 15vh;
   }
   .formCreateContainer{
-    margin-top: 30vh
+    margin-top: 15vh
   }
 
   .form-container {
@@ -119,5 +119,10 @@
   .form-button {
     padding: 10px; /* Ajusta el espacio alrededor del botón */
     margin: 10px; /* Ajusta el margen del botón */
+  }
+}
+@media (max-width: 480px) {
+  .formCreateContainer{
+    margin-top: 15vh
   }
 }

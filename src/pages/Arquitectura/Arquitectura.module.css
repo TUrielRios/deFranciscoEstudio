@@ -56,11 +56,18 @@
 
 /* Estilos para pantallas pequeñas */
 @media only screen and (max-width: 768px) {
+  .exploreContainer{
+    margin-top: 10%;
+  }
   .locationContainer {
     max-width: 500px; /* Hace que el contenedor sea del 100% en pantallas pequeñas */
     height: auto;
   }
   
+  .locationTitle{
+    font-size: 16px;
+  }
+
   .footer{
     margin-top: 10vh;
   }

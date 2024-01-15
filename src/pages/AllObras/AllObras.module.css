@@ -50,9 +50,9 @@
 }
 
 /* Estilos adicionales para hacerlo responsive */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .containerF {
-    margin: 5% 5%;
+    margin: 10vh 5%;
   }
 
   .containerF img {
@@ -61,11 +61,14 @@
 }
 @media only screen and (max-width: 480px) {
   .containerF {
-    margin: 0 auto;
+    margin: 10vh 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Cambiado a columna para apilar el contenido */
+  }
+  .containerF p{
+    font-size: 1rem;
   }
 
   .containerF img {

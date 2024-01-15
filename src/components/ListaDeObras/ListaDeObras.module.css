@@ -85,3 +85,11 @@
   .editButton:hover{
     background-color: rgb(42, 166, 17);
   }
+
+  /* Estilos para pantallas menores o iguales a 768px */
+
+@media (max-width: 768px) {
+  .obras-list-item {
+    flex: 0 0 calc(100% - 20px); /* Cambia el ancho al 100% para ocupar toda la pantalla */
+  }
+}

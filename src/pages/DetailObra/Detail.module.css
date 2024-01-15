@@ -70,6 +70,7 @@
   .detailContainer {
     width: 70%;
     flex-direction: column;
+    margin-top: 10vh;
   }
 
   .slider {
@@ -79,5 +80,8 @@
 
   .dataContainer {
     margin-left: 0;
+  }
+  .footer{
+    margin-top: 10vh;
   }
 }

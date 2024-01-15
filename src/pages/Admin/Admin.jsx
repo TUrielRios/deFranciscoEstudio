@@ -5,6 +5,7 @@ import ListaDeObras from '../../components/ListaDeObras/ListaDeObras';
 import ListaDeEmpleados from '../../adminComponents/ListaDeEmpleados/ListaDeEmpleados';
 import FormEmpleados from '../../adminComponents/FormEmpleados/FormEmpleados';
 import { useNavigate } from 'react-router-dom';
+import ChangePassword from '../../adminComponents/ChangePassword/ChangePassword';
 
 const Admin = () => {
 
@@ -83,6 +84,9 @@ const Admin = () => {
                     </section>
                     <section>
                         <FormEmpleados />
+                    </section>
+                    <section>
+                      <ChangePassword />
                     </section>
             
                 </div> 
