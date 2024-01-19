@@ -1,13 +1,14 @@
-/* Estilos base */
-.carruselContainer {
-  max-width: 73%; /* Ajusta el ancho según tus preferencias */
+/* ContractorCarousel.module.css */
+
+.container {
+  width: 73%; /* Ajusta el ancho según tus preferencias */
   overflow: hidden;
   margin: 0 auto;
   background-color: white;
-  margin: 20px;
-}
+  margin: 2vw;
 
-.carruselContainer h1 {
+}
+.title{
   color: black;
   text-align: center;
   font-size: 24px;
@@ -18,8 +19,7 @@
   font-weight: bold;
   position: relative;
 }
-
-.carruselContainer h1::after {
+.title::after{
   content: '';
   display: block;
   width: 30%;
@@ -28,77 +28,49 @@
   margin: 10px auto; /* Ajusta la distancia entre la palabra y el subrayado */
 }
 
-.logoImageContainer {
-  display: flex;
-  animation: scroll 15s linear infinite;
-  white-space: nowrap;
-  width: 200%;
-  overflow: hidden; /* Añadido para evitar que las imágenes se desborden en pantallas pequeñas */
+.slider {
+  margin: 5vw auto;
 }
 
-.logoImage {
-  width: auto;
-  height: 100%;
+.slider img {
+  width: 100%;
+  height: 10vh;
+  border: 1px solid #ddd; /* Borde ligero para separar las imágenes */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease-in-out;
 }
 
-.logoImageDuplicate {
-  margin-right: 10px; /* Ajusta la distancia entre las imágenes duplicadas */
+.slider img:hover {
+  transform: scale(1.1); /* Efecto de escala al pasar el ratón */
 }
 
-/* Agrega estas clases para las animaciones */
-.animated {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+/* Estilos para pantallas inferiores o iguales a 768px */
+@media (max-width: 768px) {
+  .container{
+    width: 85%;
   }
-  100% {
-    transform: translateX(-100%);
+  .title{
+    font-size: 14px;
   }
-  /* Agrega un tiempo de espera al final para una transición más suave */
-  100.1% {
-    transform: translateX(-100%);
+
+  .slider{
+    margin: 7vw auto;
+  }
+  .slider img {
+    height: auto;
   }
 }
 
-/* Estilos para pantallas medianas */
-@media only screen and (max-width: 768px) {
-  .carruselContainer {
-    max-width: 85%; /* Ajustar el ancho del contenedor en pantallas medianas */
+  
+@media (max-width: 480px) {
+  .container{
+    width: 100%;
   }
-
-  .logoImageContainer {
-    width: 300%; /* Ajustar el ancho del contenedor en pantallas medianas */
+  .title{
+    font-size: 10px;
   }
-
-  .logoImageDuplicate {
-    margin-right: 5px; /* Ajustar la distancia entre las imágenes duplicadas en pantallas medianas */
-  }
-}
-
-/* Estilos para pantallas pequeñas */
-@media only screen and (max-width: 600px) {
-  .carruselContainer {
-    max-width: 100%; /* Ajustar el ancho del contenedor en pantallas pequeñas */
-  }
- .carruselContainer h1 {
-  font-size: 14px;
- }
-
-  .logoImageContainer {
-    width: 300%; /* Ajustar el ancho del contenedor en pantallas pequeñas */
-  }
-
-  .logoImageDuplicate {
-    margin-right: 3px; /* Ajustar la distancia entre las imágenes duplicadas en pantallas pequeñas */
+  .slider{
+    margin: 15vw 0 0 0;
   }
 }
