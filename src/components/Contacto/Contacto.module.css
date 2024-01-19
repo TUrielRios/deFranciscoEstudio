@@ -21,7 +21,7 @@
 }
 .mapContainer {
     float: left;
-    width: 50%;
+    width: 48%;
     box-sizing: border-box; /* Asegura que el borde se incluya en el ancho total */
   }
 
@@ -100,7 +100,9 @@
     background-color: #212121;
     color: rgb(255, 255, 255);
   }
-  
+
+
+
 /* Estilos para pantallas inferiores o iguales a 768px */
 @media (max-width: 768px) {
   .mapContainer,

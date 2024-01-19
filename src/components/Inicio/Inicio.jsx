@@ -14,7 +14,7 @@ import {
     fetchEmployeesSuccess,
     fetchEmployeesFailure,
 } from '../../redux/features/empleadoSlice';
-import logo from '../../imagenes/gif-loading.gif'
+import logo from '../../imagenes/loader.gif'
 
 const Inicio = () => {
 
@@ -55,20 +55,23 @@ if (error) {
         </div>
       ) : (
         <>
+        <div className={styles.main}>
           <div className={styles.backgroundImage}>
-            {/* Coloca tu logo u otra imagen de fondo aquí */}
-            <img src={fondo} alt="" />
-          </div>
-          <div className={styles.content}>
-            <div className={styles.socialIcons}>
-              <a href="https://www.facebook.com/people/Estudio-de-Francisco/100063657481777/" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-              <a href="https://www.tiktok.com/@arq.defrancisco" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
-              <a href="https://www.instagram.com/arq.defrancisco/?hl=es-la" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              {/* Coloca tu logo u otra imagen de fondo aquí */}
+              <img src={fondo} alt="" />
             </div>
-            <div className={styles.scrollDown}>
-              <a href="#nosotros"><FaArrowDown /></a>
+            <div className={styles.content}>
+              <div className={styles.socialIcons}>
+                <a href="https://www.facebook.com/people/Estudio-de-Francisco/100063657481777/" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+                <a href="https://www.tiktok.com/@arq.defrancisco" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
+                <a href="https://www.instagram.com/arq.defrancisco/?hl=es-la" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              </div>
+              <div className={styles.scrollDown}>
+                <a href="#nosotros"><FaArrowDown /></a>
+              </div>
             </div>
-          </div>
+        </div>
+
           <Nosotros />
           <Carrusel />
           <Contacto />

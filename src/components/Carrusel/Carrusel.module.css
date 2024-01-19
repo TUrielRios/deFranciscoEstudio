@@ -45,6 +45,25 @@
   transform: scale(1.1); /* Efecto de escala al pasar el ratón */
 }
 
+
+/* Estilos para pantallas inferiores o iguales a 1024px */
+@media (max-width: 1024px) {
+  .container{
+    width: 74%;
+  }
+  .title{
+    font-size: 14px;
+  }
+
+  .slider{
+    margin: 7vw auto;
+  }
+  .slider img {
+    height: auto;
+  }
+}
+
+
 /* Estilos para pantallas inferiores o iguales a 768px */
 @media (max-width: 768px) {
   .container{
