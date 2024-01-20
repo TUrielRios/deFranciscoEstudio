@@ -5,12 +5,22 @@
   background-color: transparent;
   margin: 20px;
   width: 95vw;
+  height: 9vh;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed; /* Agregado para hacer la barra fija */
+  top: 0; /* Ajusta la barra en la parte superior de la pantalla */
+  left: 0;
+  right: 0;
+  background-color: black; /* Puedes cambiarlo si deseas otro color de fondo */
+  z-index: 1000; /* Asegura que esté sobre cualquier otro contenido */
+  width: 95%;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -50,19 +60,26 @@
 /* Estilos para pantallas menores o iguales a 768px */
 
 @media (max-width: 768px) {
+  .header {
+    width: 92vw;
+    height: 2vh;
+  }
+  .nav {
+    position: relative; /* Cambia la posición de nuevo para dispositivos móviles */
+  }
 
   .navLinks {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 11vh; /* Ajusta la posición del menú desplegado */
+    position: fixed;
+    top: 9vh; /* Ajusta la posición del menú desplegado */
     height: 100%;
     left: 0;
     width: 100%;
     background-color: #333;
     padding: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1001; /* Asegura que el menú desplegable esté sobre cualquier otro contenido */
+    z-index: 1001;
   }
 
   .navLinks a {
@@ -77,11 +94,11 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    position: absolute;
-    top: 1%; /* Centra verticalmente */
-    right: 1%; /* Centra horizontalmente */
+    position: fixed; /* Hacer el ícono fijo solo para dispositivos móviles */
+    top: 1%;
+    right: 1%;
     transform: translate(-50%);
-    z-index: 1002; /* Asegura que el icono de menú esté sobre cualquier otro contenido */
+    z-index: 1002; /* Asegura que el ícono de menú esté sobre cualquier otro contenido */
   }
 
   .bar {
@@ -91,5 +108,3 @@
     margin: 6px 0;
   }
 }
-
-
