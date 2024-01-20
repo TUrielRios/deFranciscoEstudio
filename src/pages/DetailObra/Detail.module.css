@@ -54,6 +54,9 @@
   color: whitesmoke;
   background-color: black;
 }
+.btnVolver:hover{
+  background-color: #333;
+}
 
 .footer {
     display: flex;

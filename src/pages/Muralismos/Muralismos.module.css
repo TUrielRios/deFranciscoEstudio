@@ -71,6 +71,8 @@
   z-index: 999; /* Ajusta según sea necesario para que el botón esté encima de otros elementos */
 }
 
+
+
 .btnVolver {
   color: whitesmoke;
   background-color: black;
@@ -78,6 +80,9 @@
   padding: 10px;
   border-radius: 2px;
   cursor: pointer;
+}
+.btnVolver:hover{
+  background-color: rgb(44, 44, 44);
 }
 .footer {
   display: flex;
