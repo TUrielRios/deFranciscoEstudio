@@ -1,21 +1,14 @@
-.obrasTerminadasContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px; /* Ajuste del espacio entre elementos */
-  padding: 0 2%; /* Ajuste del relleno */
-  margin: 0 auto;
-  min-height: calc(75vh - 150px); /* Resta el espacio del pie de página */
-}
+/* ObrasEnConstruccion.module.css */
 
-.footerContainerOT {
+.container {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 150px;
-  margin: 0 auto;
-  width: 100%;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(85vh - 150px);
+    width: 90%;
+    margin: 0 auto;
+
 }
 
 .title {
@@ -28,6 +21,8 @@
   margin-top: 5%;
   letter-spacing: 2px;
   position: relative;
+  text-align: center;
+
 }
 
 .title::before {
@@ -41,6 +36,28 @@
   background-color: rgb(203, 203, 203); /* Color de la línea */
   margin-top: 3px; /* Ajusta la separación vertical de la línea */
 }
+
+.obrasTerminadasContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin:  0 auto;
+  padding: 20px;
+
+
+}
+
+.footerContainerOT {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 150px;
+  margin: 0 auto;
+  width: 100%; 
+}
+
 
 
 
@@ -76,7 +93,7 @@
 .polyfilmbtn {
   display: flex;
   align-items: center;
-  margin-top: 5vh; /* Add space between Ver todas las obras button and Volver button */
+
   background-color: transparent;
   transition: transform 0.3s ease; /* Agrega una transición suave para el efecto hover */
   font-size: 20px;
@@ -115,20 +132,22 @@
 
 /* Estilos para dispositivos más pequeños */
 @media only screen and (max-width: 768px) {
-  .title {
-    font-size: 24px; /* Ajuste del tamaño de la fuente */
-    margin-top: 10vh;
-  }
-
-  .obrasTerminadasContainer {
-    padding: 0 5%; /* Ajuste del relleno */
-
-  }
-
-  .btnVolver {
-    margin-top: 5px; /* Ajuste del margen superior */
-  }
   .footerContainerOT{
+      margin-top: 20%;
+  }
+  .title{
     margin-top: 10vh;
   }
+
+
+}
+@media only screen and (max-width: 480px) {
+  .footer{
+      margin-top: 20%;
+  }
+  .title{
+    font-size: 14px;
+  }
+
+
 }

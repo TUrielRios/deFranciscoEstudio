@@ -18,7 +18,8 @@ const ObrasTerminadas = () => {
   }, [dispatch]);
 
   return (
-    <div >
+    <>
+         <div className={styles.container}>
         <h2 className={styles.title}>Obras terminadas</h2>
         <div className={styles.obrasTerminadasContainer}>
             {obrasTerminadas.map((obra) => (
@@ -33,11 +34,15 @@ const ObrasTerminadas = () => {
             <button className={styles.btnVolver}>Volver</button>
             </Link>
         </div>
-
+        </div>
+        
         <div className={styles.footerContainerOT}>
         <Footer />
-        </div>           
-    </div>
+        </div> 
+    </>
+   
+          
+
   );
 };
 

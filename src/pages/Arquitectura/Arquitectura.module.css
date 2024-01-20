@@ -4,7 +4,6 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 5%;
   min-height: calc(85vh - 150px); /* Resta el espacio del pie de página */
 }
 
