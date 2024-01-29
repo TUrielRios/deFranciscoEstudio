@@ -2,12 +2,12 @@
 .footerContainer {
   background-color: #000000; /* Ajusta el color de fondo según tu diseño */
   color: #fff; /* Ajusta el color del texto según tu diseño */
-
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  margin: 0 auto
+  width: 85%;
+  margin: 0 auto;
+  padding: 5px
 }
 
 .contactInfo {
@@ -55,11 +55,15 @@
 
 
 
+
+
 /* Estilos para pantallas pequeñas */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1108px) {
   .footerContainer {
     flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
     align-items: center; /* Alinea los elementos al principio en pantallas pequeñas */
+    text-align: center;
+    gap: 20px;
   }
 
   .contactInfo,
@@ -69,4 +73,14 @@
     align-items: center; 
   }
 
+}
+@media only screen and (max-width: 420px){
+    .contactTel{
+      font-size: 14px;
+    }
+  .footerContainer{
+    font-size: 15px;
+    width: 100%;
+    padding: 0;
+  }
 }

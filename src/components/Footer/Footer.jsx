@@ -13,9 +13,9 @@ const Footer = () => {
         <img src={logo} alt="Logo de la empresa" />
       </div>
       <div className={styles.contactInfo}>
-        <div>
+        <div className={styles.contactTel}>
           <FaPhone />
-          <p>+54 9 11 3439-2837</p>
+          <p>+54 9 11 3439-2837 / +54 9 11 6791-3258</p>
         </div>
         <div>
           <FaEnvelope />
