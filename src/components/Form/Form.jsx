@@ -37,34 +37,35 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const uploadedUrls = await Promise.all(
         imagesSelected.map(async (image) => {
           const formData = new FormData();
           formData.append('file', image);
-          formData.append('upload_preset', 'vxfhdafl');
-
+          formData.append('upload_preset', 'ukxezoje');
+  
           const response = await axios.post(
-            'https://api.cloudinary.com/v1_1/dhiss395i/image/upload',
+            'https://api.cloudinary.com/v1_1/dcwg0evjm/image/upload',
             formData
           );
-
+  
           return response.data.secure_url;
         })
       );
-
+  
       // Aquí puedes realizar alguna validación antes de enviar los datos
       const obraData = {
         ...values,
         imagenes: uploadedUrls,
       };
-
+  
+      // Despachar la acción para crear la obra en el estado global (Redux)
       dispatch(createObra(obraData));
-
+  
       setShowAlert(true);
       console.log('Formulario enviado correctamente');
-
+  
       // Restablecer el formulario a su estado inicial
       setValues({
         nombre: '',
@@ -77,12 +78,15 @@ const Form = () => {
       });
       setImagesSelected([]);
       setUploadedImageUrls([]);
-
-          // Recargar la página después de un breve retraso (puedes ajustar el tiempo según tus necesidades)
-    setTimeout(() => {
-      window.location.reload();
-    }, 2000); // 2000 milisegundos = 2 segundos
-
+  
+      // Opción 1: Después de enviar el formulario, desactiva la alerta después de unos segundos
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 3000); // 3000 milisegundos = 3 segundos
+  
+      // Opción 2: Desactiva la alerta cuando el usuario hace clic en el botón "Cerrar"
+      // setShowAlert(false);
+  
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
     }

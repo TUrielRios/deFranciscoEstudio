@@ -1,18 +1,16 @@
-// Nosotros.js
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import styles from './Nosotros.module.css'; // Asegúrate de tener un módulo de estilos para Nosotros
+import styles from './Nosotros.module.css';
 import { useInView } from 'react-intersection-observer';
 import { useSpring, animated, useTrail } from 'react-spring';
-// Importa las acciones y el selector necesarios
-
-
 
 const Nosotros = () => {
+  const [ref, inView] = useInView();
+  const { employees } = useSelector((state) => state.employee);
 
-    const [ref, inView] = useInView()    
-    const { employees } = useSelector((state) => state.employee);
+  // Ordenar empleados por la posición
+  const sortedEmployees = employees ? [...employees].sort((a, b) => a.posicion - b.posicion) : [];
 
   // Configuración de la animación principal
   const mainAnimation = useSpring({
@@ -21,16 +19,13 @@ const Nosotros = () => {
     config: { tension: 170, friction: 20 },
   });
 
-// Configuración de la animación de las letras
-const trailAnimation = useTrail(employees?.length || 0, {
-  opacity: inView ? 1 : 0,
-  transform: inView ? 'translateY(0)' : 'translateY(20px)',
-  config: { tension: 170, friction: 20 },
-  delay: 300, // Ajusta el tiempo de retraso entre cada letra
-});
-
-
-
+  // Configuración de la animación de las letras
+  const trailAnimation = useTrail(sortedEmployees.length, {
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateY(0)' : 'translateY(20px)',
+    config: { tension: 170, friction: 20 },
+    delay: 300,
+  });
 
   return (
     <animated.div id="nosotros" className={`${styles.nosotrosSection} ${styles.animated}`} style={mainAnimation} ref={ref}>
@@ -42,18 +37,23 @@ const trailAnimation = useTrail(employees?.length || 0, {
           artístico, perspectivista, diseño gráfico, muralista, maquetista, renders y animaciones 3D.
         </p>
         <section className={styles.empleadoContainer}>
-          {employees && employees.length > 0 && trailAnimation.map((props, index) => (
-            <animated.article key={employees[index].id} className={`${styles.empleadoItem}`} style={props}>
-              <img src={employees[index].foto} alt="Empleado" />
-              <span className={styles.nombreCompleto}>{employees[index].nombre_completo}</span>
-              <br />
-              <span className={styles.cargo}>{employees[index].cargo}</span>
-              <br />
-              {employees[index].cedula_a && <span className={styles.cedulaA}>Cédula A: {employees[index].cedula_a}</span>}
-              <br />
-              {employees[index].cedula_b && <span className={styles.cedulaB}> Cédula B: {employees[index].cedula_b}</span>}
-            </animated.article>
-          ))}
+          {sortedEmployees.length > 0 &&
+            trailAnimation.map((props, index) => (
+              <animated.article key={sortedEmployees[index].id} className={`${styles.empleadoItem}`} style={props}>
+                <img src={sortedEmployees[index].foto} alt="Empleado" />
+                <span className={styles.nombreCompleto}>{sortedEmployees[index].nombre_completo}</span>
+                <br />
+                <span className={styles.cargo}>{sortedEmployees[index].cargo}</span>
+                <br />
+                {sortedEmployees[index].cedula_a && (
+                  <span className={styles.cedulaA}>Cédula A: {sortedEmployees[index].cedula_a}</span>
+                )}
+                <br />
+                {sortedEmployees[index].cedula_b && (
+                  <span className={styles.cedulaB}> Cédula B: {sortedEmployees[index].cedula_b}</span>
+                )}
+              </animated.article>
+            ))}
         </section>
       </div>
     </animated.div>

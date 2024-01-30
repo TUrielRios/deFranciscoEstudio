@@ -1,55 +1,86 @@
 /* frontend/components/EmployeeList.module.css */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: whitesmoke;
-    padding: 30px;
-
-  }
-  
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .employeeList {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .employeeItem {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #868686;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-  }
-  
-.fotoN{
-    padding: 10px;
-    width: 10%;
-    height: auto;
+  max-width: 800px;
+  margin: 10px auto;
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-  .deleteButton {
-    background-color: #ff4136;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 14px;
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.employeeList {
+  list-style: none;
+  padding: 0;
+}
+
+.employeeItem {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.employeeItem:hover {
+  transform: scale(1.02);
+}
+
+.fotoN {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.editButton,
+.deleteButton {
+  background-color: #d42d23;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.editButton{
+  background-color: rgb(0, 199, 0);
+}
+
+.editButton:hover{
+  background-color: darkgreen;
+}
+.deleteButton:hover {
+  background-color: #d42d23;
+}
+
+.editButton {
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .employeeItem {
+      flex-direction: row;
+      align-items: center;
   }
-  
-  .deleteButton:hover {
-    background-color: #d42d23;
+
+  .fotoN {
+      margin-right: 20px;
+      margin-bottom: 0;
   }
+}
+
   

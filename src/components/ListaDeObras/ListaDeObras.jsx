@@ -57,31 +57,39 @@ const ListaDeObras = () => {
     // Manejar cambios en las imágenes durante la edición
     const selectedFiles = Array.from(e.target.files);
     setNewImages(selectedFiles);
+    setEditedImages([]);  // Limpiar las imágenes existentes al seleccionar nuevas imágenes
   };
 
   const handleSaveClick = async () => {
     try {
-      // Sube las nuevas imágenes a Cloudinary
-      const uploadedUrls = await Promise.all(
-        newImages.map(async (image) => {
-          const formData = new FormData();
-          formData.append('file', image);
-          formData.append('upload_preset', 'vxfhdafl');
-
-          const response = await axios.post(
-            'https://api.cloudinary.com/v1_1/dhiss395i/image/upload',
-            formData
-          );
-
-          return response.data.secure_url;
-        })
-      );
-
-      // Combina las imágenes existentes con las nuevas y elimina duplicados
-      const updatedImages = [...editedImages, ...uploadedUrls].filter(
-        (value, index, self) => self.indexOf(value) === index
-      );
-
+      let updatedImages;
+  
+      if (newImages.length > 0) {
+        // Sube las nuevas imágenes a Cloudinary
+        const uploadedUrls = await Promise.all(
+          newImages.map(async (image) => {
+            const formData = new FormData();
+            formData.append('file', image);
+            formData.append('upload_preset', 'ukxezoje');
+  
+            const response = await axios.post(
+              'https://api.cloudinary.com/v1_1/dcwg0evjm/image/upload',
+              formData
+            );
+  
+            return response.data.secure_url;
+          })
+        );
+  
+        // Combina las imágenes existentes con las nuevas y elimina duplicados
+        updatedImages = [...editedImages, ...uploadedUrls].filter(
+          (value, index, self) => self.indexOf(value) === index
+        );
+      } else {
+        // Si no hay nuevas imágenes seleccionadas, usa las existentes
+        updatedImages = editedImages;
+      }
+  
       dispatch(
         updateObra({
           ...editingObra,
@@ -95,7 +103,7 @@ const ListaDeObras = () => {
           imagenes: updatedImages,
         })
       );
-
+  
       setEditingObra(null);
       alert('Editado correctamente');
       setTimeout(() => {
@@ -105,13 +113,14 @@ const ListaDeObras = () => {
       console.error('Error al editar la obra:', error);
     }
   };
+  
 
   if (loading) {
     return <p className={styles['loading-message']}>Cargando obras...</p>;
   }
 
   return (
-    <div className={styles['lista-de-obras']}>
+    <div className={styles.listaDeObras}>
       <div className={styles['obras-section']}>
         <h2 className={styles.subtitle}>Obras Terminadas</h2>
         <ul className={styles['obras-list']}>
@@ -190,7 +199,7 @@ const ListaDeObras = () => {
                     <p>{obra.finalidades}</p>
                     <p>{obra.superficie} m² cubiertos</p>
                       {obra.metrosSemicubiertos ? 
-                        <p>{obra.metrosSemicubiertos} m² semicubiertos</p>
+                        <p>{obra.metrosSemicubiertos} m² </p>
                       :
                         <p>{obra.metrosSemicubiertos}</p>
                       }
@@ -286,7 +295,7 @@ const ListaDeObras = () => {
                   <p>{obra.finalidades}</p>
                   <p>{obra.superficie} m² cubiertos</p>
                     {obra.metrosSemicubiertos ? 
-                      <p>{obra.metrosSemicubiertos} m² semicubiertos</p>
+                      <p>{obra.metrosSemicubiertos} m² </p>
                     :
                       <p>{obra.metrosSemicubiertos}</p>
                     }

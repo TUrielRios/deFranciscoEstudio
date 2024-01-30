@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Uploader from "../../components/Form/Form";
+import Form from "../../components/Form/Form";
 import styles from './Admin.module.css';
 import ListaDeObras from '../../components/ListaDeObras/ListaDeObras';
 import ListaDeEmpleados from '../../adminComponents/ListaDeEmpleados/ListaDeEmpleados';
@@ -10,12 +10,13 @@ import ChangePassword from '../../adminComponents/ChangePassword/ChangePassword'
 const Admin = () => {
 
     
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const navigate = useNavigate();
-    let [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [showForgotPassword, setShowForgotPassword] = useState(false);
-    
+  const [selectedSection, setSelectedSection] = useState('form');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+
 
     const handlePasswordSubmit = async (e) => {
         e.preventDefault();
@@ -66,30 +67,43 @@ const Admin = () => {
         }
       };
 
+      const renderSection = () => {
+        switch (selectedSection) {
+          case 'form':
+            return <Form />;
+          case 'obras':
+            return <ListaDeObras />;
+          case 'empleados':
+            return <ListaDeEmpleados />;
+          case 'formEmpleados':
+            return <FormEmpleados />;
+          case 'changePassword':
+            return <ChangePassword />;
+          default:
+            return null;
+        }
+      };
 
     return(
         <div>
-            {isLoggedIn ?
-                <div className={styles.mainContainer}>
-                    <h1 className={styles.title}>Panel de administración</h1>
-                    <div className={styles.formCreateContainer}>
-                        <Uploader />
-                    </div>
-
-                    <section className={styles.listaDeObras}>
-                        <ListaDeObras />
-                    </section>
-                    <section className={styles.listaDeEmpleados}>
-                        <ListaDeEmpleados />
-                    </section>
-                    <section>
-                        <FormEmpleados />
-                    </section>
-                    <section>
-                      <ChangePassword />
-                    </section>
-            
-                </div> 
+            {isLoggedIn ? (
+        <div className={styles.mainContainer}>
+          <h1 className={styles.title}>Panel de administración</h1>
+          <div className={styles.formCreateContainer}>
+            <select
+              className={styles.menuDropdown}
+              value={selectedSection}
+              onChange={(e) => setSelectedSection(e.target.value)}
+            >
+              <option value="form">Publicar Obra</option>
+              <option value="obras">Lista de Obras</option>
+              <option value="empleados">Lista de Empleados</option>
+              <option value="formEmpleados">Publicar Empleados</option>
+              <option value="changePassword">Cambiar Contraseña</option>
+            </select>
+          </div>
+          <section className={styles.contentSection}>{renderSection()}</section>
+        </div> ) 
                 :
                 <div className={styles.mainFormContainer}>
                 {!showForgotPassword ? (

@@ -20,13 +20,16 @@ const ObrasEnConstruccion = () => {
         }
     }, [dispatch, obrasCargadas]);
 
+      // Ordena las obras terminadas en orden inverso según el id
+  const obrasEnConstruccionInverso = [...obrasEnConstruccion].reverse();
+
     return (
         <>
             <div className={styles.container}>
             <h2 className={styles.title}>Obras en Construcción</h2>
             {obrasCargadas ? (
                 <div className={styles.obrasEnConstruccionContainer}>
-                    {obrasEnConstruccion.map((obra) => (
+                    {obrasEnConstruccionInverso.map((obra) => (
                         <ObraCard key={obra.id} obra={obra} />
                     ))}
                 </div>

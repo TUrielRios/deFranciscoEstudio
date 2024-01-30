@@ -65,7 +65,7 @@ const Detail = () => {
           <p>{finalidades}</p>
           <p>{superficie} m² cubiertos</p>
           {metrosSemicubiertos ? 
-            <p>{metrosSemicubiertos} m² semicubiertos</p>
+            <p>{metrosSemicubiertos} m² </p>
           :
             <p>{metrosSemicubiertos}</p>
           }
