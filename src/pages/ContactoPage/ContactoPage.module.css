@@ -1,6 +1,6 @@
 
 .contactPageContainer{
-  height: 100vh;
+  min-height: calc(90vh - 150px);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -10,11 +10,10 @@
 .contactoContainer {
   width: 73%;
   margin: 0 auto;
+  padding: 2vw;
   background-color: rgb(0, 0, 0);
-  overflow: hidden; /* Limpiar el float */
   display: flex;
   align-items: center;
-  padding: 2vw;
 
 }
 
@@ -22,7 +21,7 @@
   color: rgb(255, 255, 255);
   text-align: center;
   font-size: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
@@ -121,6 +120,14 @@
     margin: 0 auto;
     width: 100%;
     }
+
+
+/* Estilos para pantallas inferiores o iguales a 768px */
+@media (max-width: 1100px) {
+  .footerContainerCP{
+    margin-top: 10vh;
+  }
+}
 /* Estilos para pantallas inferiores o iguales a 768px */
 @media (max-width: 768px) {
   .footerContainerCP{
