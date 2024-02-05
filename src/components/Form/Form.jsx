@@ -97,6 +97,7 @@ const Form = () => {
 
       <form className={styles.form} onSubmit={handleSubmit}>
       <h1 className={styles.title}>Publicar Obra</h1>
+        <div className={styles.inputContainer}>
         <label>
           Nombre : 
           <input type="text" name="nombre" value={values.nombre} onChange={handleChange} />
@@ -138,6 +139,8 @@ const Form = () => {
           Imágenes: 
           <input type="file" multiple onChange={handleImagesChange} />
         </label>
+        </div>
+       
 
         {/* Sección para previsualizar las imágenes */}
         {imagesSelected.length > 0 && (

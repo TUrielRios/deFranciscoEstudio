@@ -9,6 +9,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  margin: 0 auto;
+  width: 95%;
 
 }
 

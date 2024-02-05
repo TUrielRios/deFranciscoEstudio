@@ -87,6 +87,7 @@ const FormEmpleados = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Publicar empleado</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.inputContainer}>
         <label>
           Nombre Completo:
           <input
@@ -113,6 +114,7 @@ const FormEmpleados = () => {
           Foto:
           <input type="file" onChange={handleImageChange} />
         </label>
+        </div>
         {imageUrl && (
           <div className={styles.imagePreview}>
             <h2>Imagen Previsualizada:</h2>
