@@ -89,7 +89,7 @@
 }
 
 .empleadoItem {
-  width: 18vw; /* Ancho de cada tarjeta de empleado */
+  width: 16vw; /* Ancho de cada tarjeta de empleado */
   margin: 3%; /* Espaciado entre las tarjetas */
   text-align: center;
 

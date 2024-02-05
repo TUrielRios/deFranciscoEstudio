@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import logo from '../../imagenes/logo.png'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +16,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} ${menuOpen ? styles.openMenu : ''}`}>
-      <Link to="/" className={styles.logo} />
+
         <div className={styles.menuIcon} onClick={toggleMenu}>
           <div className={styles.bar}></div>
           <div className={styles.bar}></div>

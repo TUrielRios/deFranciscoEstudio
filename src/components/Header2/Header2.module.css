@@ -1,65 +1,72 @@
 /* Header.module.css */
 
-/* Estilos base */
 .header {
-  background-color: transparent;
-  margin: 20px;
-  width: 95vw;
-  height: 9vh;
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.menuIcon {
+  display: none;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: fixed; /* Agregado para hacer la barra fija */
-  top: 0; /* Ajusta la barra en la parte superior de la pantalla */
-  left: 0;
-  right: 0;
-  background-color: black; /* Puedes cambiarlo si deseas otro color de fondo */
-  z-index: 1000; /* Asegura que esté sobre cualquier otro contenido */
-  width: 95%;
-  padding: 10px;
-  margin: 0 auto;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.logo img {
-  width: 20%;
-  height: auto;
 }
 
 .navLinks {
   display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navLinks a {
   text-decoration: none;
-  padding-right: 10px;
-  color: rgb(254, 254, 254);
-  border-right: 1px solid rgb(255, 255, 255);
-  margin: 20px; /* Reducir el margen entre las opciones de navegación */
-  transition: all 0.3s ease;
+  color: white;
+  margin: 0 15px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  position: relative;
   text-transform: uppercase;
+  font-size: small;
 }
 
 .navLinks a:hover {
-  color: #675302;
-  transform: scale(1.1);
+
+  color: #fff;
+  box-shadow: 0 2px 0 0 #fff; /* Efecto de subrayado al pasar el ratón */
+}
+
+.navLinks .pointerDivider::before {
+  content: "|";
+  color: white;
+  margin: 0 15px;
+  display: inline-block; /* Asegura que el divider sea visible */
 }
 
 /* Estilos para pantallas menores o iguales a 768px */
 
 @media (max-width: 768px) {
+  .logoContainer{
+    display: none;
+  }
   .header {
     width: 92vw;
     height: 2vh;
