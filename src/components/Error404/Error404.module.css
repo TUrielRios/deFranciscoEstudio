@@ -1,0 +1,39 @@
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 70vh;
+  }
+  
+  .errorTitle {
+    font-size: 2.5rem;
+    color: #FF5733;
+  }
+  
+  .errorMessage {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  .backButton {
+    display: inline-block;
+    background-color: transparent; /* Cambio de color a transparente */
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: transform 0.3s ease; /* Añadimos una transición para la escala */
+  }
+  
+  .backButton:hover {
+    transform: scale(1.2); /* Al hacer hover, aumenta la escala */
+
+  }
+  
+  

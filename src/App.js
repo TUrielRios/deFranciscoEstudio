@@ -12,6 +12,7 @@ import ObrasEnConstruccion from './pages/ObrasEnConstruccion/ObrasEnConstruccion
 import Admin from './pages/Admin/Admin';
 import Header2 from './components/Header2/Header2';
 import ContactoPage from './pages/ContactoPage/ContactoPage';
+import Error404 from './components/Error404/Error404';
 
 function App() {
   const location = useLocation();
@@ -36,6 +37,7 @@ function App() {
         <Route exact path="/muralismo" element={<Muralismos />} />
         <Route exact path="/admin" element={<Admin />} />
         <Route exact path="/contacto" element={<ContactoPage />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );
