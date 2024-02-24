@@ -1,3 +1,25 @@
 body{
   background-color: black;
 }
+/* scrollbar.css */
+
+/* Estilo para el contenedor principal */
+::-webkit-scrollbar {
+  width: 12px; /* ancho de la barra de desplazamiento */
+}
+
+/* Estilo para el riel de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: #000000; /* color del riel */
+}
+
+/* Estilo para el control deslizante de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #888; /* color del control deslizante */
+  border-radius: 6px; /* radio de borde del control deslizante */
+}
+
+/* Estilo para el control deslizante al pasar el mouse sobre él */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* color del control deslizante al pasar el mouse */
+}
