@@ -5,6 +5,7 @@ import ObraCard from '../../components/ObraCard/ObraCard';
 import styles from './ObrasTerminadas.module.css';
 import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
+import WhatsappIcon from '../../components/WhatsappIcon/WhatsappIcon';
 
 const ObrasTerminadas = () => {
   const obrasTerminadas = useSelector(selectObrasTerminadas);
@@ -35,7 +36,7 @@ const ObrasTerminadas = () => {
           </Link>
         </div>
       </div>
-
+      <WhatsappIcon phoneNumber="+5491167913258" />
       <div className={styles.footerContainerOT}>
         <Footer />
       </div>

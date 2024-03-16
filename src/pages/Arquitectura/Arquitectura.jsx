@@ -4,6 +4,7 @@ import { fetchObras} from '../../redux/features/obrasSlice';
 import styles from './Arquitectura.module.css';
 import { useNavigate } from "react-router-dom";
 import Footer from '../../components/Footer/Footer'
+import WhatsappIcon from '../../components/WhatsappIcon/WhatsappIcon';
 
 const Arquitectura = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const Arquitectura = () => {
           <img className={styles.image} src="https://static.wixstatic.com/media/c36ba4_784047eb5b0a445a80145f075e7e199a~mv2.jpg/v1/fill/w_569,h_389,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c36ba4_784047eb5b0a445a80145f075e7e199a~mv2.jpg" alt="" />
         </div>
       </div>
+      <WhatsappIcon phoneNumber="+5491167913258" />
       <div className={styles.footer}>
           <Footer />
       </div>   

@@ -15,6 +15,7 @@ import {
     fetchEmployeesFailure,
 } from '../../redux/features/empleadoSlice';
 import logo from '../../imagenes/loader.gif'
+import WhatsappIcon from '../WhatsappIcon/WhatsappIcon';
 
 const Inicio = () => {
 
@@ -75,6 +76,7 @@ if (error) {
           <Nosotros />
           <Carrusel />
           <Contacto />
+          <WhatsappIcon/>
   
           <div className={styles.footerContainerIn}>
             <Footer />
@@ -83,7 +85,6 @@ if (error) {
       )}
     </div>
   </>
-  
 
     
   );

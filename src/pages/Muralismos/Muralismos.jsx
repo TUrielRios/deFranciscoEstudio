@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
+import WhatsappIcon from '../../components/WhatsappIcon/WhatsappIcon';
 
 const Muralismos = () => {
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ const Muralismos = () => {
             ))}
           </div>
         </div>
-
+        <WhatsappIcon phoneNumber="+5491167913258" />
         <div className={styles.footer}>
           <Footer />
         </div>

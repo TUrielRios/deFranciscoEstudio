@@ -9,6 +9,7 @@ import styles from './Detail.module.css';
 import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import WhatsappIcon from '../../components/WhatsappIcon/WhatsappIcon';
 
 const Detail = () => {
   const { id } = useParams();
@@ -78,6 +79,7 @@ const Detail = () => {
 
         {/* Add more content as needed */}
       </div>
+      <WhatsappIcon phoneNumber="+5491167913258" />
       <div className={styles.footer}>
         <Footer />
       </div>

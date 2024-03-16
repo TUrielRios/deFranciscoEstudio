@@ -2,6 +2,7 @@ import React from "react";
 import styles from './AllObras.module.css'
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
+import WhatsappIcon from "../../components/WhatsappIcon/WhatsappIcon";
 
 const AllObras = () => {
     return(
@@ -21,6 +22,7 @@ const AllObras = () => {
                 <img src="https://static.wixstatic.com/media/c36ba4_3c634157e792407785edbfb3eaaf4480~mv2.jpg/v1/fill/w_530,h_750,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c36ba4_3c634157e792407785edbfb3eaaf4480~mv2.jpg" alt="o" />
                 <img src="https://static.wixstatic.com/media/c36ba4_1f3e054c4fd34f3192550b389374d538~mv2.jpg/v1/fill/w_530,h_750,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c36ba4_1f3e054c4fd34f3192550b389374d538~mv2.jpg" alt="o" />
             </div>
+            <WhatsappIcon phoneNumber="+5491167913258" />
             <Link className={styles.link} to="/arquitectura/obras-terminadas">
             <button className={styles.btnVolver}>Volver</button>
             </Link>

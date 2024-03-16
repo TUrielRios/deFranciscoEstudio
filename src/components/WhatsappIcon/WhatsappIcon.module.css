@@ -1,0 +1,17 @@
+/* WhatsappIcon.module.css */
+
+.whatsappIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ajusta el z-index según sea necesario */
+  }
+  
+  .whatsappIcon img {
+    width: 55px; /* Ajusta el tamaño del icono según sea necesario */
+    height: auto;
+  }
+  .whatsappIcon img:hover{
+    transform: scale(1.1);
+  }
+  

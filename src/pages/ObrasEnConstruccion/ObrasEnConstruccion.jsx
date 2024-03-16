@@ -7,6 +7,7 @@ import ObraCard from '../../components/ObraCard/ObraCard';
 import styles from './ObrasEnConstruccion.module.css';
 import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
+import WhatsappIcon from '../../components/WhatsappIcon/WhatsappIcon';
 
 const ObrasEnConstruccion = () => {
     const obrasEnConstruccion = useSelector(selectObrasEnConstruccion);
@@ -40,9 +41,10 @@ const ObrasEnConstruccion = () => {
                 <button className={styles.btnVolver}>Volver</button>
             </Link>
         </div>
+        <WhatsappIcon phoneNumber="+5491167913258" />
         <div className={styles.footer}>
                 <Footer />
-            </div>
+        </div>
         </>
 
     );

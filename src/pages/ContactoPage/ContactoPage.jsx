@@ -9,6 +9,7 @@ import logoMap from '../../imagenes/logo.png'
 import L from 'leaflet';
 import { useState } from 'react';
 import Footer from '../../components/Footer/Footer';
+import WhatsappIcon from '../../components/WhatsappIcon/WhatsappIcon';
 
 const ContactoPage = () => {
 
@@ -119,6 +120,7 @@ const ContactoPage = () => {
                 </div>
 
         </animated.div>
+        <WhatsappIcon phoneNumber="+5491167913258" />
         <div className={styles.footerContainerCP}>
                   <Footer/>
                 </div>
