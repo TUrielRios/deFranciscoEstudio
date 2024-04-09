@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 import styles from './CuartoContenedor.module.css';
 import imagenAntes1 from '../../imagenes/antes1.jpg';
@@ -14,7 +14,7 @@ import imagenDespues4 from '../../imagenes/despues4.jpg';
 const CuartoContenedor = () => {
   return (
     <div className={styles.container}>
-      <Fade left>
+      <Fade direction='left'>
         <div className={styles.infoContainer}>
           <h2 className={styles.title}>Render vs Realidad</h2>
           <h3 className={styles.subtitle}>¡Chusmeá un poco nuestros resultados, <br/> antes y después moviendo la flechita!</h3>
@@ -23,9 +23,9 @@ const CuartoContenedor = () => {
           </p>
         </div>
       </Fade>
-      <Fade right>
+      <Fade direction='right'>
         <div className={styles.rightContainer}>
-            <Fade top>
+            <Fade direction='up'>
           <div className={styles.compareSlide}>
             <ReactCompareSlider
               itemOne={<ReactCompareSliderImage src={imagenAntes1} alt="Render" />}
@@ -33,7 +33,7 @@ const CuartoContenedor = () => {
             />
           </div>
           </Fade>
-          <Fade right>
+          <Fade direction='right'>
           <div className={styles.compareSlide}>
             <ReactCompareSlider
               itemOne={<ReactCompareSliderImage src={imagenAntes2} alt="Render" />}
@@ -41,7 +41,7 @@ const CuartoContenedor = () => {
             />
           </div>
           </Fade>
-          <Fade bottom>
+          <Fade direction='down'>
           <div className={styles.compareSlide}>
             <ReactCompareSlider
               itemOne={<ReactCompareSliderImage src={imagenAntes3} alt="Render" />}
@@ -49,7 +49,7 @@ const CuartoContenedor = () => {
             />
           </div>
           </Fade>
-          <Fade bottom>
+          <Fade direction='down'>
           <div className={styles.compareSlide}>
             <ReactCompareSlider
               itemOne={<ReactCompareSliderImage src={imagenAntes4} alt="Render" />}

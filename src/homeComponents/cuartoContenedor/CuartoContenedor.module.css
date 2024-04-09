@@ -46,10 +46,11 @@
   }
   
   .compareSlide {
-    width: calc(70% - 10px); /* Ajusta el ancho para que quepan dos en una fila con espacio entre ellos */
-    max-width: 380px; /* Define el ancho máximo de las imágenes */
+    width: calc(100% - 10px); /* Ajusta el ancho para que quepan dos en una fila con espacio entre ellos */
+    max-width: 400px; /* Define el ancho máximo de las imágenes */
     max-height: 250px; /* Define la altura máxima de las imágenes */
     border-radius: 10px;
+    object-position: bottom;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }

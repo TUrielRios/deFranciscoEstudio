@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { FaBuilding, FaHome, FaProjectDiagram, FaLeaf } from 'react-icons/fa';
 import styles from './SegundoContenedor.module.css';
 
@@ -30,13 +30,13 @@ const SegundoContenedor = () => {
   return (
     <Fade>
       <div className={styles.container}>
-        <Fade top>
-            <h3 className={styles.encabezado}>¿Qué hacemos?</h3>
+        <Fade direction="up">
+          <h3 className={styles.encabezado}>¿Qué hacemos?</h3>
           <h2 className={styles.title}>Contamos con lo necesario para tu proyecto</h2>
         </Fade>
         <div className={styles.serviciosContainer}>
           {Servicios.map((servicio, index) => (
-            <Fade key={index} bottom delay={index * 200}>
+            <Fade key={index} direction="down" delay={index * 200}>
               <div className={styles.servicioCard}>
                 <div className={styles.icon}>{servicio.icon}</div>
                 <div className={styles.content}>

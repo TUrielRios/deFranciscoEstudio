@@ -31,7 +31,7 @@
     background-color: black;
     color: white;
     padding: 20px;
-    width: calc(25% - 20px); /* Espacio para 4 tarjetas con margen de 20px entre ellas */
+    width: calc(100% - 20px); /* Espacio para 4 tarjetas con margen de 20px entre ellas */
     box-shadow: 0 0 20px rgba(107, 107, 107, 0.3); /* Ajuste del box shadow */
     display: flex;
     flex-direction: column;

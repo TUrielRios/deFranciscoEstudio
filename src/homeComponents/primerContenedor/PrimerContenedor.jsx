@@ -1,23 +1,23 @@
 import React from 'react';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal'; // Importa Fade desde react-awesome-reveal
 import styles from './PrimerContenedor.module.css';
 import imagen1 from '../../imagenes/primercontenedor0.jpg';
 import imagen2 from '../../imagenes/primercontenedor2.jpg';
 
 const PrimerContenedor = () => {
   return (
-    <Fade left>
+    <Fade direction="left"> {/* Cambia de 'left' a 'right' */}
       <div className={styles.container}>
         <div className={styles.leftContainer}>
-          <Fade top>
+          <Fade direction="up"> {/* Cambia de 'top' a 'bottom' */}
             <img src={imagen1} alt="Imagen 1" className={styles.image1} />
           </Fade>
-          <Fade bottom>
+          <Fade direction="down"> {/* Cambia de 'bottom' a 'top' */}
             <img src={imagen2} alt="Imagen 2" className={styles.image2} />
           </Fade>
         </div>
         <div className={styles.rightContainer}>
-          <Fade right>
+          <Fade direction="right"> {/* Cambia de 'right' a 'left' */}
             <h3 className={styles.encabezado}>¿Quiénes Somos?</h3>
             <h1 className={styles.title}>de francisco arquitectos</h1>
             <h2 className={styles.subtitle}>Estudio de Arquitectura en <br/> Buenos Aires, Argentina</h2>

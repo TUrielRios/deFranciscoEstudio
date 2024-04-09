@@ -3,14 +3,19 @@
     display: flex;
     width: 90%;
 
-    margin-top: 80px;
+    
+    margin: 80px auto;
     gap: 20px;
     padding: 50px 0 50px 0;
+    justify-content: center;
+    align-self: center;
+
     }
   
   .leftContainer {
     flex: 1;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     position: relative;
     width: 50%;
@@ -32,8 +37,6 @@
     padding: 0;
     display: flex;
     margin-bottom: 0px;
-    align-items: center;
-    justify-content: center;
     align-self: self-start;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Cambiar valores para aumentar la intensidad */
   }
@@ -44,9 +47,7 @@
     object-fit: cover; /* Escalar y recortar la imagen para ajustar a la altura */
     display: flex;
     margin: 0;
-    align-items: center;
-    justify-content: center;
-    align-self: self-end;
+    margin-top: 80px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Cambiar valores para aumentar la intensidad */
   }
   .encabezado{

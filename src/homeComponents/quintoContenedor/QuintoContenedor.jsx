@@ -1,15 +1,15 @@
 import React from 'react';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 import styles from './QuintoContenedor.module.css';
 import imagen1 from '../../imagenes/whyus2.jpg';
 import imagen2 from '../../imagenes/whyus1.jpg';
 
 const QuintoContenedor = () => {
   return (
-    <Fade left>
+    <Fade direction='left'>
       <div className={styles.container}>
       <div className={styles.rightContainer}>
-          <Fade leftt>
+          <Fade direction='left'>
             <h3 className={styles.encabezado}>¿Por qué elegirnos para tu próximo proyecto?</h3>
             <h1 className={styles.title}>de francisco arquitectos</h1>
             <h2 className={styles.subtitle}>Experiencia, Innovación y Compromiso</h2>
@@ -18,10 +18,10 @@ const QuintoContenedor = () => {
           </Fade>
         </div>
         <div className={styles.leftContainer}>
-          <Fade bottom>
+          <Fade direction='down'>
             <img src={imagen1} alt="Imagen 1" className={styles.image1} />
           </Fade>
-          <Fade top>
+          <Fade direction='up'>
             <img src={imagen2} alt="Imagen 2" className={styles.image2} />
           </Fade>
         </div>
