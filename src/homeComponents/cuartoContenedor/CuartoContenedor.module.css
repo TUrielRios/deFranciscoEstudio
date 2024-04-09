@@ -1,0 +1,70 @@
+/* CuartoContenedor.module.css */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+    width: 90%;
+  }
+  
+  .infoContainer {
+    flex: 0 0 30%; /* El contenedor de información ocupa el 30% del ancho y no puede crecer ni encogerse */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .title{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+  }
+  .subtitle{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .text {
+    color: white;
+    font-size: 16px;
+    line-height: 2rem;
+    text-align: center;
+  }
+  
+  .rightContainer {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .compareSlide {
+    width: calc(70% - 10px); /* Ajusta el ancho para que quepan dos en una fila con espacio entre ellos */
+    max-width: 380px; /* Define el ancho máximo de las imágenes */
+    max-height: 250px; /* Define la altura máxima de las imágenes */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+.react-compare-slider-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Escala la imagen para que se ajuste al contenedor */
+    object-position: center; /* Centra la imagen horizontalmente */
+  }
+  
+  @media (max-width: 768px) {
+    .compareSlide {
+      width: 100%; /* En pantallas más pequeñas, mostrar una tarjeta por fila */
+      margin-right: 0; /* Elimina el margen derecho en pantallas pequeñas */
+    }
+  }
+  

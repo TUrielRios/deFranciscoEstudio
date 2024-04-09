@@ -3,9 +3,8 @@
 .container {
   width: 73%; /* Ajusta el ancho según tus preferencias */
   overflow: hidden;
-  margin: 0 auto;
+  margin: 20px auto;
   background-color: white;
-  margin: 2vw;
 
 }
 .title{

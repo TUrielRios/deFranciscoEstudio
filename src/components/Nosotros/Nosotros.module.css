@@ -7,7 +7,7 @@
   align-items: center;
   flex-direction: column; /* Cambiado a columna para apilar el contenido */
   padding: 20px;
-  margin-top: 15%;
+  margin: 5% auto 0 auto; /* Ajuste del margen para centrar verticalmente */
   padding-top: 5%;
   width: 70%;
   background-color: rgb(255, 255, 255);

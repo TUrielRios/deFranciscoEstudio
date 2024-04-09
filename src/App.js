@@ -13,6 +13,8 @@ import Admin from './pages/Admin/Admin';
 import Header2 from './components/Header2/Header2';
 import ContactoPage from './pages/ContactoPage/ContactoPage';
 import Error404 from './components/Error404/Error404';
+import Nosotros from './components/Nosotros/Nosotros';
+import ScrollToTop from './scrollToTop/ScrollToTop';
 
 function App() {
   const location = useLocation();
@@ -29,6 +31,7 @@ function App() {
       {showHeader2 ? <Header2 /> : <Header />}
       <Routes>
         <Route exact path="/" element={<Landing />} />
+        <Route exact path="/nosotros" element={<Nosotros />} />
         <Route exact path="/arquitectura" element={<Arquitectura />} />
         <Route exact path="/arquitectura/obras-terminadas" element={<ObrasTerminadas />} />
         <Route exact path="/arquitectura/obras-en-construcción" element={<ObrasEnConstruccion />} />
@@ -39,6 +42,7 @@ function App() {
         <Route exact path="/contacto" element={<ContactoPage />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
+      <ScrollToTop />
     </div>
   );
 }

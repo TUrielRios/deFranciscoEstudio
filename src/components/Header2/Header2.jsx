@@ -26,6 +26,9 @@ const Header2 = () => {
           <Link to="/" onClick={closeMenu}>
             Inicio
           </Link>
+          <Link to="/nosotros" onClick={closeMenu}>
+            Nosotros
+          </Link>
           <Link to="/arquitectura" onClick={closeMenu}>
             Arquitectura
           </Link>

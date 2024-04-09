@@ -27,9 +27,9 @@ const Header = () => {
           <Link to="/" onClick={closeMenu}>
             Inicio
           </Link>
-          <a href="/#nosotros" onClick={closeMenu}>
+          <Link to="/nosotros" onClick={closeMenu}>
             Nosotros
-          </a>
+          </Link>
           <Link to="/arquitectura" onClick={closeMenu}>
             Arquitectura
           </Link>

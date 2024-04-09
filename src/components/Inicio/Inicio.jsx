@@ -16,6 +16,11 @@ import {
 } from '../../redux/features/empleadoSlice';
 import logo from '../../imagenes/loader.gif'
 import WhatsappIcon from '../WhatsappIcon/WhatsappIcon';
+import PrimerContenedor from '../../homeComponents/primerContenedor/PrimerContenedor';
+import SegundoContenedor from '../../homeComponents/segundoContenedor/SegundoContenedor';
+import TercerContenedor from '../../homeComponents/tercerContenedor/TercerContenedor';
+import CuartoContenedor from '../../homeComponents/cuartoContenedor/CuartoContenedor';
+import QuintoContenedor from '../../homeComponents/quintoContenedor/QuintoContenedor';
 
 const Inicio = () => {
 
@@ -68,15 +73,20 @@ if (error) {
                 <a href="https://www.instagram.com/arq.defrancisco/?hl=es-la" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
               </div>
               <div className={styles.scrollDown}>
-                <a href="#nosotros"><FaArrowDown /></a>
+                <a href="#primer-contenedor"><FaArrowDown /></a>
               </div>
             </div>
         </div>
-
-          <Nosotros />
-          <Carrusel />
-          <Contacto />
           <WhatsappIcon/>
+          <div className={styles.primerContenedor} id='primer-contenedor'>
+          <PrimerContenedor />
+          </div>
+          
+          <SegundoContenedor />
+          <TercerContenedor/>
+          <CuartoContenedor />
+          <QuintoContenedor/>
+          <Contacto/>
   
           <div className={styles.footerContainerIn}>
             <Footer />
