@@ -92,7 +92,7 @@
 
   .nav.openMenu .navLinks {
     display: flex;
-    height: 70%;
+    height: 100%;
     overflow-y: auto;
   }
 
