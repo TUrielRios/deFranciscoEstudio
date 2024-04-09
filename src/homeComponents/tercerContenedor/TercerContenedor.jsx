@@ -5,7 +5,7 @@ import styles from './TercerContenedor.module.css';
 import imagenConstruccion from '../../imagenes/enconstruccion.jpg';
 import imagenTerminadas from '../../imagenes/terminadas.jpg';
 import imagenMuralismos from '../../imagenes/muralismovertical.png';
-import imagenConstruccionMobile from '../../imagenes/menu2.jpg';
+import imagenConstruccionMobile from '../../imagenes/enconstruccionmobile.jpg';
 import imagenTerminadasMobile from '../../imagenes/menu0.jpg';
 import imagenMuralismosMobile from '../../imagenes/muralismo.jpg';
 
