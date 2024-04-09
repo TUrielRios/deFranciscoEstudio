@@ -35,18 +35,20 @@
 /* Media Queries */
 @media only screen and (max-width: 768px) {
   .container {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reducir el tamaño mínimo y máximo de las columnas */
-      padding: 60px; /* Reducir el padding */
+    display: flex;
+    flex-direction: column;
+    padding: 60px; /* Reducir el padding */
+    gap: 20px;
   }
 
   .item img {
-      height: 350px; /* Reducir la altura de las imágenes para dispositivos móviles */
+      height: auto; /* Reducir la altura de las imágenes para dispositivos móviles */
   }
 }
 
 @media only screen and (max-width: 480px) {
   .container {
-      padding: 0px; /* Reducir el padding */
+      padding: 40px; /* Reducir el padding */
 
   }
 

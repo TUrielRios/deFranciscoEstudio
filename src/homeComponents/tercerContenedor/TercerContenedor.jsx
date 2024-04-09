@@ -5,25 +5,33 @@ import styles from './TercerContenedor.module.css';
 import imagenConstruccion from '../../imagenes/enconstruccion.jpg';
 import imagenTerminadas from '../../imagenes/terminadas.jpg';
 import imagenMuralismos from '../../imagenes/muralismovertical.png';
+import imagenConstruccionMobile from '../../imagenes/menu2.jpg';
+import imagenTerminadasMobile from '../../imagenes/menu0.jpg';
+import imagenMuralismosMobile from '../../imagenes/muralismo.jpg';
 
 const TercerContenedor = () => {
   return (
     <div className={styles.container}>
+      {/* Obras en Construcción */}
       <Fade direction='left'>
         <Link to="/arquitectura/obras-en-construcción" className={styles.item}>
-          <img src={imagenConstruccion} alt="Obras en Construcción" />
+          <img src={window.innerWidth <= 768 ? imagenConstruccionMobile : imagenConstruccion} alt="Obras en Construcción" />
           <h3 className={styles.title}>Obras en Construcción</h3>
         </Link>
       </Fade>
+
+      {/* Obras Terminadas */}
       <Fade direction='down'>
         <Link to="/arquitectura/obras-terminadas" className={styles.item}>
-          <img src={imagenTerminadas} alt="Obras Terminadas" />
+          <img src={window.innerWidth <= 768 ? imagenTerminadasMobile : imagenTerminadas} alt="Obras Terminadas" />
           <h3 className={styles.title}>Obras Terminadas</h3>
         </Link>
       </Fade>
+
+      {/* Muralismos */}
       <Fade direction='right'>
         <Link to="/muralismo" className={styles.item}>
-          <img src={imagenMuralismos} alt="Muralismos" />
+          <img src={window.innerWidth <= 768 ? imagenMuralismosMobile : imagenMuralismos} alt="Muralismos" />
           <h3 className={styles.title}>Muralismos</h3>
         </Link>
       </Fade>
