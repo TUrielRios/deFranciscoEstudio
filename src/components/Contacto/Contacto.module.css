@@ -1,10 +1,10 @@
 .contactoContainer {
   width: 73%;
-  margin: 0 auto;
+  margin: 80px auto;
   padding: 20px;
   background-color: rgb(0, 0, 0);
-  margin-top: 10vh;
   overflow: hidden; /* Limpiar el float */
+
 
 }
 
@@ -106,6 +106,10 @@
 
 /* Estilos para pantallas inferiores o iguales a 768px */
 @media (max-width: 768px) {
+  .contactoContainer{
+    margin: 0 20px 20px 20px ;
+    width: 90%;
+  }
   .mapContainer,
   .formContainer {
     width: 100%;

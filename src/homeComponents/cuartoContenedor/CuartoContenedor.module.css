@@ -63,6 +63,14 @@
   }
   
   @media (max-width: 768px) {
+    .container{
+      flex-direction: column;
+
+    }
+    .rightContainer{
+      justify-content: center;
+      align-items: center;
+    }
     .compareSlide {
       width: 100%; /* En pantallas más pequeñas, mostrar una tarjeta por fila */
       margin-right: 0; /* Elimina el margen derecho en pantallas pequeñas */

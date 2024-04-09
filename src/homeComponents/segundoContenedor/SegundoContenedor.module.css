@@ -1,7 +1,10 @@
 .container {
     background-color: black;
     width: 90%;
-    padding: 80px;
+    padding: 40px;
+  display: flex;
+  flex-direction: column;
+    margin: 0 auto;
   }
 
   .encabezado{
@@ -57,3 +60,47 @@
   .servicioDescription {
     margin-bottom: 0;
   }
+  /* Media Queries */
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0;
+    margin: 0 auto;
+  width: 80%;
+
+
+}
+.serviciosContainer{
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+
+}
+.servicioCard {
+  margin: 0 auto;
+    width: calc(90% - 20px); /* Espacio para 1 tarjeta con margen de 20px */
+}
+
+
+@media only screen and (max-width: 480px) {
+  .container {
+      padding: 0;
+      margin: 0 auto;
+    width: 80%;
+
+
+  }
+  .serviciosContainer{
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .servicioCard {
+    margin: 0 auto;
+
+      width: calc(90% - 20px); /* Espacio para 1 tarjeta con margen de 20px */
+  }
+}
+}

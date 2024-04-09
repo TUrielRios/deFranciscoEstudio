@@ -103,8 +103,17 @@
 
 /* Estilos para pantallas medianas */
 @media only screen and (max-width: 768px) {
+  .main{
+
+    justify-content: flex-start;
+    height: 450px;
+  }
+  .backgroundImage{
+    height: auto;
+  }
   .backgroundImage img {
     width: 80%;
+
   }
 }
 

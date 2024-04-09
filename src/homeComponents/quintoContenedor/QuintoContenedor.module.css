@@ -4,7 +4,6 @@
     width: 90%;
     margin: 80px auto;
     gap: 20px;
-
     justify-content: space-between;
     align-items: flex-start;
     }
@@ -85,3 +84,46 @@
   .contactUs:hover {
     background-color: #333;
   }
+
+  /* Media Queries */
+@media only screen and (max-width: 768px) {
+  .container {
+      flex-direction: column; /* Cambiar a dirección de columna */
+      align-items: center;
+  }
+  .rightContainer {
+      order: -1; /* Cambiar el orden del rightContainer para que aparezca primero */
+  }
+  .leftContainer {
+      width: 100%;
+      height: auto;
+      gap: 20px;
+      justify-content: space-evenly;
+      align-items: center;
+  }
+  .image1,
+  .image2 {
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+      padding: 30px 0;
+  }
+  .leftContainer {
+      padding: 0;
+  }
+  .rightContainer {
+      padding: 20px;
+  }
+  .title {
+      font-size: 18px;
+  }
+  .subtitle {
+      font-size: 16px;
+  }
+  .paragraph {
+      font-size: 14px;
+  }
+}

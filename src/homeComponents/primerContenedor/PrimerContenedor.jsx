@@ -3,6 +3,7 @@ import { Fade } from 'react-awesome-reveal'; // Importa Fade desde react-awesome
 import styles from './PrimerContenedor.module.css';
 import imagen1 from '../../imagenes/primercontenedor0.jpg';
 import imagen2 from '../../imagenes/primercontenedor2.jpg';
+import { Link } from 'react-router-dom';
 
 const PrimerContenedor = () => {
   return (
@@ -22,7 +23,9 @@ const PrimerContenedor = () => {
             <h1 className={styles.title}>de francisco arquitectos</h1>
             <h2 className={styles.subtitle}>Estudio de Arquitectura en <br/> Buenos Aires, Argentina</h2>
             <p className={styles.paragraph}>Somos un estudio de arquitectura con más de 40 años de experiencia en Buenos Aires, Argentina. Nos especializamos en [especificar áreas de especialización]. Nuestra misión es [insertar misión]. Ofrecemos servicios de [detallar servicios].</p>
-            <button className={styles.leerMas}>Leer Más</button>
+            <Link to="/nosotros">
+              <button className={styles.leerMas}>Saber Más</button>
+              </Link>
           </Fade>
         </div>
       </div>
