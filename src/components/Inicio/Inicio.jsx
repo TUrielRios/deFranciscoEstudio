@@ -4,8 +4,7 @@ import { FaArrowDown } from 'react-icons/fa';
 import styles from './Inicio.module.css';
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 import fondo from '../../imagenes/fondoOriginal.png'
-import Nosotros from '../Nosotros/Nosotros';
-import Carrusel from '../Carrusel/Carrusel';
+
 import Contacto from '../Contacto/Contacto';
 import Footer from '../Footer/Footer';
 import { useDispatch, useSelector } from 'react-redux';
