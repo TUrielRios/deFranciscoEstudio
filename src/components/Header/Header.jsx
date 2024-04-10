@@ -41,10 +41,10 @@ const Header = () => {
         <div className={styles.navLinks}>
           {menuOpen ? (
             <>
-              <Fade>
+              <Fade delay={200}>
                 <div className={styles.menuContainer}>
 
-                <Fade direction="left" delay={500}>
+                <Fade direction="left" delay={250}>
                     <div className={styles.tab}>
                       <Link to="/" onClick={closeMenu}>
                         <div className={styles.tabContent}>
@@ -56,7 +56,7 @@ const Header = () => {
                     </div>
                   </Fade>
 
-                  <Fade direction="left" delay={1000}>
+                  <Fade direction="left" delay={500}>
                     <div className={styles.tab}>
                       <Link to="/nosotros" onClick={closeMenu}>
                         <div className={styles.tabContent}>
@@ -68,7 +68,7 @@ const Header = () => {
                     </div>
                   </Fade>
 
-                  <Fade direction='left' delay={1500}>
+                  <Fade direction='left' delay={750}>
                     <div className={styles.tab}>
                       <Link to="/arquitectura" onClick={closeMenu}>
                         <div className={styles.tabContent}>
