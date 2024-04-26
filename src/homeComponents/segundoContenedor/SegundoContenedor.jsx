@@ -16,12 +16,12 @@ const Servicios = [
   },
   {
     title: "Gestión de Proyectos",
-    description: "Ofrecemos servicios de gestión integral de proyectos, desde la planificación y supervisión hasta la coordinación de equipos y recursos, garantizando resultados exitosos.",
+    description: "Ofrecemos servicios de gestión integral de proyectos, desde el diseño, la planificación y supervisión de obra hasta la evaluación de posibles proveedores y la coordinación de los mismos, garantizando resultados exitosos y una ejecución impecable.",
     icon: <FaProjectDiagram />
   },
   {
     title: "Sostenibilidad",
-    description: "Brindamos asesoramiento en estrategias y soluciones sostenibles para proyectos arquitectónicos, promoviendo el respeto por el medio ambiente y la eficiencia energética.",
+    description: "Buscamos complementarnos e interiorizarnos con proveedores y asi ofrecer soluciones sostenibles para los proyectos arquitectónicos, promoviendo el respeto por el medio ambiente y la eficiencia energética",
     icon: <FaLeaf />
   }
 ];

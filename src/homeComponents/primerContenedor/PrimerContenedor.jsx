@@ -22,7 +22,13 @@ const PrimerContenedor = () => {
             <h3 className={styles.encabezado}>¿Quiénes Somos?</h3>
             <h1 className={styles.title}>de francisco arquitectos</h1>
             <h2 className={styles.subtitle}>Estudio de Arquitectura en <br/> Buenos Aires, Argentina</h2>
-            <p className={styles.paragraph}>Somos un estudio de arquitectura con más de 40 años de experiencia en Buenos Aires, Argentina. Nos especializamos en [especificar áreas de especialización]. Nuestra misión es [insertar misión]. Ofrecemos servicios de [detallar servicios].</p>
+            <p className={styles.paragraph}>
+            Somos un estudio de arquitectura con más de 40 años de actividad y experiencia en el rubro.
+            Nos encontramos en Buenos Aires, Argentina. Pero desarrollamos proyectos para todo el país.
+            Abarcamos proyectos de pequeña y mediana escala, tales como remodelaciones y reformas de viviendas unifamiliares, locales comerciales, oficinas y cualquier otro sueño que quieras hacer realidad.
+            También tenemos mucha experiencia en proyectos de gran escala, como edificios de propiedad horizontal, plantas industriales, viviendas turísticas multifamiliares, entre otras. 
+            Nuestra misión es crear el espacio deseado por cada cliente, pero siempre buscando exprimir las ventajas ocultas de cada sector. Ofrecemos servicios de proyecto, dirección y administración de obra.
+              </p>
             <Link to="/nosotros">
               <button className={styles.leerMas}>Saber Más</button>
               </Link>
