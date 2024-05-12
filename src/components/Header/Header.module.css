@@ -12,12 +12,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; /* Agregado para hacer la barra fija */
-  top: 0; /* Ajusta la barra en la parte superior de la pantalla */
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  background-color: black; /* Puedes cambiarlo si deseas otro color de fondo */
-  z-index: 1000; /* Asegura que esté sobre cualquier otro contenido */
+  background-color: black;
+  z-index: 1000;
   width: 95%;
   padding: 10px;
   margin: 0 auto;
@@ -47,7 +47,7 @@
   padding-right: 10px;
   color: rgb(254, 254, 254);
   border-right: 1px solid rgb(255, 255, 255);
-  margin: 20px; /* Reducir el margen entre las opciones de navegación */
+  margin: 20px;
   transition: all 0.3s ease;
   text-transform: uppercase;
 }
@@ -65,40 +65,46 @@
     height: 2vh;
   }
   .nav {
-    position: relative; /* Cambia la posición de nuevo para dispositivos móviles */
+    position: relative;
   }
 
+  .menuContainer {
+    overflow-y: auto; /* Agregar desplazamiento vertical */
+  }
   .navLinks {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 9vh; /* Ajusta la posición del menú desplegado */
-    height: 100%;
+    top: 0;
     left: 0;
     width: 100%;
     background-color: #333;
     padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
     z-index: 1001;
+    margin: 0 auto;
   }
 
   .navLinks a {
     margin-bottom: 10px;
+    border-right: 0;
   }
 
   .nav.openMenu .navLinks {
     display: flex;
+    height: 100%;
+    overflow-y: auto;
   }
 
   .menuIcon {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    position: fixed; /* Hacer el ícono fijo solo para dispositivos móviles */
+    position: fixed;
     top: 1%;
     right: 1%;
     transform: translate(-50%);
-    z-index: 1002; /* Asegura que el ícono de menú esté sobre cualquier otro contenido */
+    z-index: 1002;
   }
 
   .bar {
@@ -106,5 +112,51 @@
     height: 3px;
     background-color: #fff;
     margin: 6px 0;
+  }
+
+  /* Nuevos estilos para las imágenes en el menú desplegado */
+  .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+  }
+
+  .tabContent {
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 1, 1, 0.4);
+  }
+
+  .tab img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 5px; /* Ajusta el margen inferior según sea necesario */
+  }
+
+  .tabContent span {
+    position: absolute;
+    bottom: 40%; /* Ajusta el posicionamiento vertical según sea necesario */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1; /* Asegura que el texto esté por encima de la superposición */
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Color de superposición semitransparente */
+    z-index: 0; /* Asegura que la superposición esté detrás de la imagen y el texto */
+  }
+
+  /* Clase para evitar el desplazamiento de la página */
+  .noScroll {
+    overflow: hidden;
   }
 }

@@ -11,6 +11,12 @@
   overflow: hidden;
 }
 
+.primerContenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .footerContainerIn{
   display: flex;
   justify-content: center;
@@ -97,18 +103,33 @@
 
 /* Estilos para pantallas medianas */
 @media only screen and (max-width: 768px) {
+  .main{
+
+    justify-content: center;
+    height: 450px;
+  }
+  .backgroundImage{
+    height: auto;
+  }
   .backgroundImage img {
     width: 80%;
+
   }
 }
 
 @media only screen and (max-width: 480px) {
+  .main{
+
+    height: 600px;
+
+  }
 
   .backgroundImage{
-    height: 73vh;
+    height: 500px;
+
   }
   .backgroundImage img {
-    width: 80%;
+    width: 90%;
   }
 }
 

@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux';
 import styles from './Nosotros.module.css';
 import { useInView } from 'react-intersection-observer';
 import { useSpring, animated, useTrail } from 'react-spring';
+import Carrusel from '../Carrusel/Carrusel';
+import Contacto from '../Contacto/Contacto'
+import Footer from '../Footer/Footer'
 
 const Nosotros = () => {
   const [ref, inView] = useInView();
@@ -28,7 +31,8 @@ const Nosotros = () => {
   });
 
   return (
-    <animated.div id="nosotros" className={`${styles.nosotrosSection} ${styles.animated}`} style={mainAnimation} ref={ref}>
+    <>
+        <animated.div id="nosotros" className={`${styles.nosotrosSection} ${styles.animated}`} style={mainAnimation} ref={ref}>
       <div className={styles.content}>
         <h1>Equipo De Francisco</h1>
         <p>
@@ -57,6 +61,12 @@ const Nosotros = () => {
         </section>
       </div>
     </animated.div>
+      <Carrusel/>
+      <Contacto />
+      <Footer />
+    </>
+    
+
   );
 };
 

@@ -1,0 +1,128 @@
+/* PrimerContenedor.module.css */
+
+.container {
+  display: flex;
+  flex-direction: row; /* Establecer dirección de la fila */
+  width: 90%;
+  margin: 80px auto;
+  gap: 20px;
+  padding: 50px 0 50px 0;
+  justify-content: center;
+  align-self: center;
+}
+
+.leftContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  width: 50%;
+  padding: 0px;
+  gap: 20px;
+  height: 500px;
+}
+
+.rightContainer {
+  flex: 1;
+  padding: 40px;
+  background-color: white;
+}
+
+.image1,
+.image2 {
+  width: 100%;
+  height: 570px;
+  object-fit: cover;
+  display: flex;
+  margin: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.image2 {
+  margin-top: 80px;
+}
+
+.encabezado {
+  color: black;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-left: 10px solid black;
+  padding-left: 10px;
+}
+
+.title {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.subtitle {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.paragraph {
+  color: black;
+  font-size: 16px;
+  line-height: 2rem;
+}
+
+.leerMas {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.leerMas:hover {
+  background-color: #333;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .container {
+      flex-direction: column; /* Cambiar a dirección de columna */
+      align-items: center;
+  }
+  .rightContainer {
+      order: -1; /* Cambiar el orden del rightContainer para que aparezca primero */
+  }
+  .leftContainer {
+      width: 100%;
+      height: auto;
+      gap: 0;
+  }
+  .image1,
+  .image2 {
+      height: auto;
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+      padding: 30px 0;
+  }
+  .leftContainer {
+      padding: 0;
+  }
+  .rightContainer {
+      padding: 20px;
+  }
+  .title {
+      font-size: 18px;
+  }
+  .subtitle {
+      font-size: 16px;
+  }
+  .paragraph {
+      font-size: 14px;
+  }
+}
