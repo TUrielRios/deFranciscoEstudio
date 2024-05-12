@@ -9,7 +9,7 @@
   }
   
   .infoContainer {
-    flex: 0 0 30%; /* El contenedor de información ocupa el 30% del ancho y no puede crecer ni encogerse */
+    flex: 0 0 30%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -17,25 +17,29 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Alinea el contenido al centro */
   }
-  .title{
+  
+  .title {
     color: white;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 22px;
-    text-align: center;
+    margin-bottom: 10px; /* Agrega un pequeño margen inferior al título */
   }
-  .subtitle{
+  
+  .subtitle {
     color: white;
-    text-align: center;
     font-weight: 500;
     font-size: 20px;
+    margin-bottom: 10px; /* Agrega un pequeño margen inferior al subtítulo */
   }
+  
   .text {
     color: white;
     font-size: 16px;
-    line-height: 2rem;
-    text-align: center;
+    line-height: 1.5; /* Reduzco un poco el espacio entre líneas */
+    margin-bottom: 10px; /* Agrega un pequeño margen inferior al texto */
   }
   
   .rightContainer {
@@ -43,12 +47,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+
+    align-items: center;
+    justify-content: center;
   }
   
   .compareSlide {
-    width: calc(100% - 10px); /* Ajusta el ancho para que quepan dos en una fila con espacio entre ellos */
+    width: calc(100% - 0px); /* Ajusta el ancho para que quepan dos en una fila con espacio entre ellos */
     max-width: 400px; /* Define el ancho máximo de las imágenes */
-    max-height: 250px; /* Define la altura máxima de las imágenes */
+    max-height: 210px; /* Define la altura máxima de las imágenes */
     border-radius: 10px;
     object-position: bottom;
     overflow: hidden;
@@ -67,9 +74,12 @@
       flex-direction: column;
 
     }
+
+
     .rightContainer{
       justify-content: center;
       align-items: center;
+      
     }
     .compareSlide {
       width: 100%; /* En pantallas más pequeñas, mostrar una tarjeta por fila */

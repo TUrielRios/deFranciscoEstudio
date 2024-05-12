@@ -20,8 +20,8 @@ const Servicios = [
     icon: <FaProjectDiagram />
   },
   {
-    title: "Sostenibilidad",
-    description: "Buscamos complementarnos e interiorizarnos con proveedores y asi ofrecer soluciones sostenibles para los proyectos arquitectónicos, promoviendo el respeto por el medio ambiente y la eficiencia energética",
+    title: "Sustentabilidad",
+    description: "Buscamos complementarnos e interiorizarnos con proveedores y asi ofrecer soluciones sustentables para los proyectos arquitectónicos, promoviendo el respeto por el medio ambiente y la eficiencia energética",
     icon: <FaLeaf />
   }
 ];
