@@ -31,7 +31,7 @@ const Nosotros = () => {
   });
 
   return (
-    <>
+    <div className={styles.mainContainerNos}>
         <animated.div id="nosotros" className={`${styles.nosotrosSection} ${styles.animated}`} style={mainAnimation} ref={ref}>
       <div className={styles.content}>
         <h1>Equipo De Francisco</h1>
@@ -63,8 +63,11 @@ const Nosotros = () => {
     </animated.div>
       <Carrusel/>
       <Contacto />
+      <div className={styles.footerNos}>
       <Footer />
-    </>
+      </div>
+      
+    </div>
     
 
   );

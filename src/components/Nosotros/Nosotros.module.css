@@ -1,5 +1,11 @@
 /* Nosotros.module.css */
-
+.mainContainerNos{
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: auto;
+  width: 100vw;
+}
 /* Estilos base */
 .nosotrosSection {
   display: flex;
@@ -126,7 +132,6 @@
 }
 @media only screen and (max-width: 480px) {
   .nosotrosSection{
-    width: 90%;
-    margin-left: 20px;
+    width: 80%;
   }
 }
