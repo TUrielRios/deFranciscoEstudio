@@ -4,7 +4,7 @@
   justify-content: center;
   align-self: center;
   margin: auto;
-  width: 100vw;
+  width: 100%;
 }
 /* Estilos base */
 .nosotrosSection {
@@ -122,16 +122,30 @@
 
 /* Estilos para pantallas medianas */
 @media only screen and (max-width: 768px) {
+  .mainContainerNos {
+    width: 100%;
+    margin-left: 28px;
+
+  }
+
   .nosotrosSection {
-    width: 70%; /* Ajustar el ancho del contenedor en pantallas medianas */
+    width: 70%; /* Ajusta el ancho del contenedor en pantallas pequeñas */
   }
 
   .empleadoItem {
     width: 44%; /* Ajustar el ancho de cada tarjeta en pantallas medianas */
   }
 }
+/* Estilos para pantallas pequeñas como dispositivos móviles */
 @media only screen and (max-width: 480px) {
-  .nosotrosSection{
-    width: 80%;
+  .mainContainerNos {
+    width: 100%;
+    margin-left: 14px;
+    border: 1px solid white;
   }
+
+  .nosotrosSection {
+    width: 80%; /* Ajusta el ancho del contenedor en pantallas pequeñas */
+  }
+
 }
