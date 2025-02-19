@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEmployees, deleteEmployee, updateEmployee } from '../../redux/features/empleadoSlice';
 import styles from './ListaDeEmpleados.module.css';
+import { Edit2, Trash2, Save, X } from 'lucide-react';
 
 const ListaDeEmpleados = () => {
   const dispatch = useDispatch();
   const { employees } = useSelector((state) => state.employee);
-  const [isEditing, setIsEditing] = useState(false);
+  const [editingId, setEditingId] = useState(null);
   const [editedData, setEditedData] = useState({
     nombre_completo: '',
     cargo: '',
     cedula_a: '',
     cedula_b: '',
     posicion: '',
-    // Otros campos
   });
 
   useEffect(() => {
@@ -35,18 +35,18 @@ const ListaDeEmpleados = () => {
       cedula_a: employeeToEdit.cedula_a || '',
       cedula_b: employeeToEdit.cedula_b || '',
       posicion: employeeToEdit.posicion || '',
-      // Otros campos
     });
-    setIsEditing(true);
+    setEditingId(employeeId);
   };
 
   const handleCancelEdit = () => {
-    setIsEditing(false);
+    setEditingId(null);
+    setEditedData({});
   };
 
   const handleSaveChanges = async (employeeId) => {
     await dispatch(updateEmployee({ id: employeeId, ...editedData }));
-    setIsEditing(false);
+    setEditingId(null);
     setEditedData({});
     dispatch(fetchEmployees());
   };
@@ -59,51 +59,119 @@ const ListaDeEmpleados = () => {
     });
   };
 
-  // Ordenar empleados por la posición
   const sortedEmployees = [...employees].sort((a, b) => a.posicion - b.posicion);
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Lista de empleados</h1>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Lista de empleados</h1>
+        <div className={styles.stats}>
+          <div className={styles.statItem}>
+            <span className={styles.statValue}>Hay un total de {employees.length} empleados</span>
+          </div>
+        </div>
+      </div>
       <ul className={styles.employeeList}>
         {sortedEmployees.map((employee) => (
           <li key={employee.id} className={styles.employeeItem}>
-            {isEditing && editedData.id === employee.id ? (
-              <form onSubmit={(e) => { e.preventDefault(); handleSaveChanges(employee.id); }}>
-                <label>Nombre Completo:</label>
-                <input type="text" name="nombre_completo" value={editedData.nombre_completo} onChange={handleInputChange} />
-
-                <label>Cargo:</label>
-                <input type="text" name="cargo" value={editedData.cargo} onChange={handleInputChange} />
-
-                <label>Cédula A:</label>
-                <input type="text" name="cedula_a" value={editedData.cedula_a} onChange={handleInputChange} />
-
-                <label>Cédula B:</label>
-                <input type="text" name="cedula_b" value={editedData.cedula_b} onChange={handleInputChange} />
-
-                <label>Posicion:</label>
-                <input type="text" name="posicion" value={editedData.posicion} onChange={handleInputChange} />
-                {/* Otros campos */}
-                <button type="submit">Guardar cambios</button>
-                <button type="button" onClick={handleCancelEdit}>
-                  Cancelar
-                </button>
+            {editingId === employee.id ? (
+              <form 
+                className={styles.editForm}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSaveChanges(employee.id);
+                }}
+              >
+                <div className={styles.formGroup}>
+                  <label>Nombre Completo:</label>
+                  <input
+                    type="text"
+                    name="nombre_completo"
+                    value={editedData.nombre_completo}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Cargo:</label>
+                  <input
+                    type="text"
+                    name="cargo"
+                    value={editedData.cargo}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Cédula A:</label>
+                  <input
+                    type="text"
+                    name="cedula_a"
+                    value={editedData.cedula_a}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Cédula B:</label>
+                  <input
+                    type="text"
+                    name="cedula_b"
+                    value={editedData.cedula_b}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Posición:</label>
+                  <input
+                    type="number"
+                    name="posicion"
+                    value={editedData.posicion}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className={styles.formActions}>
+                  <button type="submit" className={styles.saveButton}>
+                    <Save size={16} /> Guardar
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleCancelEdit}
+                    className={styles.cancelButton}
+                  >
+                    <X size={16} /> Cancelar
+                  </button>
+                </div>
               </form>
             ) : (
               <>
-                <span>
-                  {employee.posicion}- <br /> {employee.nombre_completo} - {employee.cargo} - {employee.cedula_a} - {employee.cedula_b}
-                </span>
-
-                <img className={styles.fotoN} src={employee.foto} alt="" />
-                <button className={styles.editButton} onClick={() => handleEdit(employee.id)}>
-                  Editar
-                </button>
-
-                <button className={styles.deleteButton} onClick={() => handleDelete(employee.id)}>
-                  Eliminar
-                </button>
+                <div className={styles.employeeHeader}>
+                  <span className={styles.employeePosition}>{employee.posicion}</span>
+                  <div className={styles.employeeActions}>
+                    <button
+                      className={styles.editButton}
+                      onClick={() => handleEdit(employee.id)}
+                    >
+                      <Edit2 size={16} />
+                    </button>
+                    <button
+                      className={styles.deleteButton}
+                      onClick={() => handleDelete(employee.id)}
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  </div>
+                </div>
+                <div className={styles.employeeInfo}>
+                  <img className={styles.fotoN} src={employee.foto} alt="" />
+                  <div className={styles.employeeDetails}>
+                    <h3 className={styles.employeeName}>{employee.nombre_completo}</h3>
+                    <p className={styles.employeeCargo}>{employee.cargo}</p>
+                    {employee.cedula_a && (
+                      <p className={styles.employeeCedula}>Cédula A: {employee.cedula_a}</p>
+                    )}
+                    {employee.cedula_b && (
+                      <p className={styles.employeeCedula}>Cédula B: {employee.cedula_b}</p>
+                    )}
+                  </div>
+                </div>
               </>
             )}
           </li>

@@ -1,86 +1,136 @@
-/* frontend/components/EmployeeList.module.css */
 .container {
-  max-width: 800px;
-  margin: 10px auto;
-  background-color: #f5f5f5;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1c23;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
 }
 
 .employeeList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
   list-style: none;
   padding: 0;
 }
 
 .employeeItem {
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
 }
 
 .employeeItem:hover {
-  transform: scale(1.02);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.employeeItem span {
+  display: block;
+  color: #4a5568;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .fotoN {
   width: 100%;
-  max-width: 100px;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
 }
 
-.editButton,
-.deleteButton {
-  background-color: #d42d23;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease-in-out;
-}
-.editButton{
-  background-color: rgb(0, 199, 0);
+.employeeItem form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.editButton:hover{
-  background-color: darkgreen;
+.employeeItem form label {
+  color: #4a5568;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
 }
-.deleteButton:hover {
-  background-color: #d42d23;
+
+.employeeItem form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.employeeItem form input:focus {
+  border-color: #3182ce;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
 }
 
 .editButton {
-  margin-right: 10px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 0.5rem;
 }
 
-@media screen and (min-width: 768px) {
-  .employeeItem {
-      flex-direction: row;
-      align-items: center;
-  }
-
-  .fotoN {
-      margin-right: 20px;
-      margin-bottom: 0;
-  }
+.editButton:hover {
+  background-color: #2c5282;
 }
 
-  
+.deleteButton {
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+  background-color: #c53030;
+}
+
+.employeeItem form button[type="submit"],
+.employeeItem form button[type="button"] {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.employeeItem form button[type="submit"] {
+  background-color: #3182ce;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.employeeItem form button[type="submit"]:hover {
+  background-color: #2c5282;
+}
+
+.employeeItem form button[type="button"] {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.employeeItem form button[type="button"]:hover {
+  background-color: #cbd5e0;
+}

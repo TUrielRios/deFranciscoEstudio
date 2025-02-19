@@ -1,9 +1,9 @@
-// ListaDeObras.js
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchObras, selectObrasCargadas, selectObrasTerminadas, selectObrasEnConstruccion, selectLoading, deleteObra, updateObra } from '../../redux/features/obrasSlice';
 import styles from './ListaDeObras.module.css';
 import axios from 'axios';
+import { Edit2, Trash2, Save, X } from 'lucide-react';
 
 const ListaDeObras = () => {
   const dispatch = useDispatch();
@@ -20,10 +20,8 @@ const ListaDeObras = () => {
   const [editedFinalidades, setEditedFinalidades] = useState('');
   const [editedPlace, setEditedPlace] = useState('');
   const [editedEstado, setEditedEstado] = useState('');
-  const [editedImages, setEditedImages] = useState([]); // Nuevo estado para las imágenes
-  const [removedImages, setRemovedImages] = useState([]); // Nuevo estado para las imágenes eliminadas
+  const [editedImages, setEditedImages] = useState([]);
   const [newImages, setNewImages] = useState([]);
-
 
   useEffect(() => {
     if (!obrasCargadas) {
@@ -32,12 +30,13 @@ const ListaDeObras = () => {
   }, [dispatch, obrasCargadas]);
 
   const handleDeleteClick = (obraId) => {
-    // Llama a la acción de Redux para eliminar la obra
-    dispatch(deleteObra(obraId));
-    alert("Elimiinado correctamente")
-    setTimeout(() => {
+    if (window.confirm('¿Estás seguro de que deseas eliminar esta obra?')) {
+      dispatch(deleteObra(obraId));
+      alert("Eliminado correctamente");
+      setTimeout(() => {
         window.location.reload();
       }, 1000);
+    }
   };
 
   const handleEditClick = (obra) => {
@@ -45,51 +44,50 @@ const ListaDeObras = () => {
     setEditedName(obra.nombre);
     setEditedYear(obra.año);
     setEditedSuperf(obra.superficie);
-    setEditedMetrosS(obra.metrosSemicubiertos)
+    setEditedMetrosS(obra.metrosSemicubiertos);
     setEditedFinalidades(obra.finalidades);
     setEditedPlace(obra.lugar);
     setEditedEstado(obra.estado);
-    setEditedImages([...obra.imagenes]); // Copia las imágenes existentes al iniciar la edición
-    setRemovedImages([]); // Reinicia el array de imágenes eliminadas
+    setEditedImages([...obra.imagenes]);
+    setNewImages([]);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingObra(null);
+    setNewImages([]);
   };
 
   const handleImagesChange = (e) => {
-    // Manejar cambios en las imágenes durante la edición
     const selectedFiles = Array.from(e.target.files);
     setNewImages(selectedFiles);
-    setEditedImages([]);  // Limpiar las imágenes existentes al seleccionar nuevas imágenes
+    setEditedImages([]);
   };
 
   const handleSaveClick = async () => {
     try {
-      let updatedImages;
-  
+      let updatedImages = editedImages;
+
       if (newImages.length > 0) {
-        // Sube las nuevas imágenes a Cloudinary
         const uploadedUrls = await Promise.all(
           newImages.map(async (image) => {
             const formData = new FormData();
             formData.append('file', image);
             formData.append('upload_preset', 'ukxezoje');
-  
+
             const response = await axios.post(
               'https://api.cloudinary.com/v1_1/dcwg0evjm/image/upload',
               formData
             );
-  
+
             return response.data.secure_url;
           })
         );
-  
-        // Combina las imágenes existentes con las nuevas y elimina duplicados
+
         updatedImages = [...editedImages, ...uploadedUrls].filter(
           (value, index, self) => self.indexOf(value) === index
         );
-      } else {
-        // Si no hay nuevas imágenes seleccionadas, usa las existentes
-        updatedImages = editedImages;
       }
-  
+
       dispatch(
         updateObra({
           ...editingObra,
@@ -103,7 +101,7 @@ const ListaDeObras = () => {
           imagenes: updatedImages,
         })
       );
-  
+
       setEditingObra(null);
       alert('Editado correctamente');
       setTimeout(() => {
@@ -113,205 +111,124 @@ const ListaDeObras = () => {
       console.error('Error al editar la obra:', error);
     }
   };
-  
 
-  if (loading) {
-    return <p className={styles['loading-message']}>Cargando obras...</p>;
-  }
-
-  return (
-    <div className={styles.listaDeObras}>
-      <div className={styles['obras-section']}>
-        <h2 className={styles.subtitle}>Obras Terminadas</h2>
-        <ul className={styles['obras-list']}>
-          {obrasTerminadas.map((obra) => (
-            <li key={obra.id} className={styles['obras-list-item']}>
-              {editingObra === obra ? (
-                <>
-                  <input
-                    type="text"
-                    placeholder='nombre'
-                    value={editedName}
-                    onChange={(e) => setEditedName(e.target.value)}
-                    className={styles.editInput}
-                  />
-                    <input
-                    type="text"
-                    placeholder='año'
-                    value={editedYear}
-                    onChange={(e) => setEditedYear(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                    <input
-                    type="text"
-                    placeholder='lugar'
-                    value={editedPlace}
-                    onChange={(e) => setEditedPlace(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                    <input
-                    type="text"
-                    placeholder='finalidades'
-                    value={editedFinalidades}
-                    onChange={(e) => setEditedFinalidades(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                    <input
-                    type="text"
-                    placeholder='superficie'
-                    value={editedSuperf}
-                    onChange={(e) => setEditedSuperf(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                                      <input
-                    type="text"
-                    placeholder='metros semicubiertos'
-                    value={editedMetrosS}
-                    onChange={(e) => setEditedMetrosS(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                    <input
-                    type="text"
-                    placeholder='estado'
-                    value={editedEstado}
-                    onChange={(e) => setEditedEstado(e.target.value)}
-                    className={styles.editInput}
-                  />
-                                  <input
+  const renderObrasList = (obras, title) => (
+    <div className={styles['obras-section']}>
+      <h2 className={styles.subtitle}>{title}</h2>
+      <ul className={styles['obras-list']}>
+        {obras.map((obra) => (
+          <li key={obra.id} className={styles['obras-list-item']}>
+            {editingObra === obra ? (
+              <div className={styles.editForm}>
+                <input
+                  type="text"
+                  placeholder="Nombre"
+                  value={editedName}
+                  onChange={(e) => setEditedName(e.target.value)}
+                  className={styles.editInput}
+                />
+                <input
+                  type="text"
+                  placeholder="Año"
+                  value={editedYear}
+                  onChange={(e) => setEditedYear(e.target.value)}
+                  className={styles.editInput}
+                />
+                <input
+                  type="text"
+                  placeholder="Lugar"
+                  value={editedPlace}
+                  onChange={(e) => setEditedPlace(e.target.value)}
+                  className={styles.editInput}
+                />
+                <input
+                  type="text"
+                  placeholder="Finalidades"
+                  value={editedFinalidades}
+                  onChange={(e) => setEditedFinalidades(e.target.value)}
+                  className={styles.editInput}
+                />
+                <input
+                  type="text"
+                  placeholder="Superficie"
+                  value={editedSuperf}
+                  onChange={(e) => setEditedSuperf(e.target.value)}
+                  className={styles.editInput}
+                />
+                <input
+                  type="text"
+                  placeholder="Metros semicubiertos"
+                  value={editedMetrosS}
+                  onChange={(e) => setEditedMetrosS(e.target.value)}
+                  className={styles.editInput}
+                />
+                <input
+                  type="text"
+                  placeholder="Estado"
+                  value={editedEstado}
+                  onChange={(e) => setEditedEstado(e.target.value)}
+                  className={styles.editInput}
+                />
+                <input
                   type="file"
                   multiple
                   onChange={handleImagesChange}
                   className={styles.editInput}
                 />
-
-
-
+                <div className={styles.editActions}>
                   <button onClick={handleSaveClick} className={styles.saveButton}>
-                    Guardar
+                    <Save size={16} /> Guardar
                   </button>
-                </>
-              ) : (
-                <>
-                  <h3>{obra.nombre}</h3>
-                  <img src={obra.imagenes[0]} alt="" className={styles.imagenes} />
-                  <p>{obra.año}</p>
-                    <p>{obra.lugar}</p>
-                    <p>{obra.finalidades}</p>
-                    <p>{obra.superficie} m² cubiertos</p>
-                      {obra.metrosSemicubiertos ? 
-                        <p>{obra.metrosSemicubiertos} m² </p>
-                      :
-                        <p>{obra.metrosSemicubiertos}</p>
-                      }
-                    <p>{obra.estado}</p>
-                  <button onClick={() => handleEditClick(obra)} className={styles.editButton}>
-                    Editar
+                  <button onClick={handleCancelEdit} className={styles.cancelButton}>
+                    <X size={16} /> Cancelar
                   </button>
-                  <button onClick={() => handleDeleteClick(obra.id)} className={styles.deleteButton}>
-                    X
-                  </button>
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className={styles['obras-section']}>
-        <h2 className={styles.subtitle}>Obras en Construcción</h2>
-        <ul className={styles['obras-list']}>
-          {obrasEnConstruccion.map((obra) => (
-            <li key={obra.id} className={styles['obras-list-item']}>
-              {editingObra === obra ? (
-                <>
-                <input
-                  type="text"
-                  placeholder='nombre'
-                  value={editedName}
-                  onChange={(e) => setEditedName(e.target.value)}
-                  className={styles.editInput}
-                />
-                  <input
-                  type="text"
-                  placeholder='año'
-                  value={editedYear}
-                  onChange={(e) => setEditedYear(e.target.value)}
-                  className={styles.editInput}
-                />
-                                  <input
-                  type="text"
-                  placeholder='lugar'
-                  value={editedPlace}
-                  onChange={(e) => setEditedPlace(e.target.value)}
-                  className={styles.editInput}
-                />
-                                  <input
-                  type="text"
-                  placeholder='finalidades'
-                  value={editedFinalidades}
-                  onChange={(e) => setEditedFinalidades(e.target.value)}
-                  className={styles.editInput}
-                />
-                                  <input
-                  type="text"
-                  placeholder='superficie'
-                  value={editedSuperf}
-                  onChange={(e) => setEditedSuperf(e.target.value)}
-                  className={styles.editInput}
-                />
-                                                    <input
-                  type="text"
-                  placeholder='metros semicubiertos'
-                  value={editedMetrosS}
-                  onChange={(e) => setEditedMetrosS(e.target.value)}
-                  className={styles.editInput}
-                />
-                                  <input
-                  type="text"
-                  placeholder='estado'
-                  value={editedEstado}
-                  onChange={(e) => setEditedEstado(e.target.value)}
-                  className={styles.editInput}
-                />
-                                <input
-                type="file"
-                multiple
-                onChange={handleImagesChange}
-                className={styles.editInput}
-              />
-
-
-
-                <button onClick={handleSaveClick} className={styles.saveButton}>
-                  Guardar
-                </button>
-              </>
+                </div>
+              </div>
             ) : (
-              <>
-                <h3>{obra.nombre}</h3>
+              <div className={styles.obraContent}>
+                <div className={styles.obraHeader}>
+                  <h3>{obra.nombre}</h3>
+                  <div className={styles.obraActions}>
+                    <button onClick={() => handleEditClick(obra)} className={styles.editButton}>
+                      <Edit2 size={16} />
+                    </button>
+                    <button onClick={() => handleDeleteClick(obra.id)} className={styles.deleteButton}>
+                      <Trash2 size={16} />
+                    </button>
+                  </div>
+                </div>
                 <img src={obra.imagenes[0]} alt="" className={styles.imagenes} />
-                <p>{obra.año}</p>
-                  <p>{obra.lugar}</p>
-                  <p>{obra.finalidades}</p>
-                  <p>{obra.superficie} m² cubiertos</p>
-                    {obra.metrosSemicubiertos ? 
-                      <p>{obra.metrosSemicubiertos} m² </p>
-                    :
-                      <p>{obra.metrosSemicubiertos}</p>
-                    }
-                  <p>{obra.estado}</p>
-                <button onClick={() => handleEditClick(obra)} className={styles.editButton}>
-                  Editar
-                </button>
-                <button onClick={() => handleDeleteClick(obra.id)} className={styles.deleteButton}>
-                  X
-                </button>
-              </>
-              )}
-            </li>
-          ))}
-        </ul>
+                <div className={styles.obraDetails}>
+                  <p><strong>Año:</strong> {obra.año}</p>
+                  <p><strong>Lugar:</strong> {obra.lugar}</p>
+                  <p><strong>Finalidades:</strong> {obra.finalidades}</p>
+                  <p><strong>Superficie:</strong> {obra.superficie} m² cubiertos</p>
+                  {obra.metrosSemicubiertos && (
+                    <p><strong>Semicubiertos:</strong> {obra.metrosSemicubiertos} m²</p>
+                  )}
+                  <p><strong>Estado:</strong> {obra.estado}</p>
+                </div>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  if (loading) {
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.loadingSpinner}></div>
+        <p className={styles['loading-message']}>Cargando obras...</p>
       </div>
+    );
+  }
+
+  return (
+    <div className={styles.listaDeObras}>
+      {renderObrasList(obrasTerminadas, "Obras Terminadas")}
+      {renderObrasList(obrasEnConstruccion, "Obras en Construcción")}
     </div>
   );
 };
